@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pós-Graduação em Biomecânica de Elite</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#030912',       /* Fundo Profundo */
+                            surface: '#1A1A1A',  /* Cartões Cinza Dark */
+                            surfaceHighlight: '#262626',
+                            primary: '#1E64F0',  /* Azul Elétrico */
+                            accent: '#1E64F0',
+                        }
+                    },
+                    backgroundImage: {
+                        'mesh': "radial-gradient(at 0% 0%, rgba(30, 100, 240, 0.25) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(30, 100, 240, 0.1) 0px, transparent 50%)",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Efeitos de Texto e Fundo */
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+        
+        .card-hover:hover .text-stroke {
+            -webkit-text-stroke: 1px rgba(30, 100, 240, 0.3);
+        }
+
+        /* Glassmorphism Moderno */
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .feature-grid {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* ANIMAÇÃO MARQUEE */
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Animação do brilho no botão */
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+
+        .animate-marquee {
+            animation: marquee-scroll 100s linear infinite; 
+        }
+        
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000">
+        <div class="container mx-auto max-w-5xl">
+            <div class="relative flex items-center justify-between px-6 py-3 rounded-full bg-[#030912]/70 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] transition-all duration-300 hover:border-brand-primary/30 hover:bg-[#030912]/80">
+                
+                <a href="#" class="block hover:opacity-80 transition-opacity duration-300">
+                    <img src="img/logo.svg" alt="BioMech Academy" class="h-8 md:h-10 w-auto">
+                </a>
+
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#programa" class="text-xs font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                        O Programa
+                        <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                    <a href="#curriculo" class="text-xs font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                        Grade
+                        <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                    <a href="#depoimentos" class="text-xs font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                        Alunos
+                        <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </div>
+
+                <a href="#matricula" class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-primary px-8 py-2.5 transition-all duration-300 hover:shadow-[0_0_20px_rgba(30,100,240,0.6)] hover:scale-105">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    <span class="relative text-[10px] font-black uppercase tracking-[0.2em] text-white">
+                        Inscreva-se
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="img/heroBg.webp" alt="" class="w-full h-full object-cover animate-[pulse_10s_infinite_alternate]">
+        </div>
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <div data-aos="fade-up" data-aos-delay="0" class="inline-flex items-center gap-2 px-3 py-1 rounded border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Turma 2026 Confirmada
+                </div>
+
+                <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl md:text-6xl font-bold uppercase italic leading-[1.1] text-white drop-shadow-lg">
+                    Biomecânica, Musculação e <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-blue-300 drop-shadow-none">Reabilitação Musculoesquelética</span>
+                </h1>
+
+                <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md font-medium">
+                    O título de pós-graduação que você precisa para aplicar a biomecânica de maneira prática, ter maior credibilidade com seus clientes e aumentar o seu faturamento.
+                </p>
+
+                <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#curriculo" class="bg-white text-black font-black uppercase italic py-4 px-8 rounded hover:bg-gray-200 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200">
+                        Ver Grade de 18 Meses <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="flex items-center gap-4 px-4">
+                        <div class="flex -space-x-3">
+                            <img class="w-10 h-10 rounded-full border-2 border-brand-bg" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-brand-bg" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-brand-bg" src="https://randomuser.me/api/portraits/men/85.jpg" alt="">
+                        </div>
+                        <p class="text-xs text-gray-200 font-medium drop-shadow-md">
+                            <strong class="text-white block text-sm">+5.000 Alunos</strong> Certificados MEC Nota 5
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
+                <div class="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?q=80&w=1000&auto=format&fit=crop" alt="Atleta sendo avaliado biomecanicamente" class="w-full h-auto object-cover opacity-90">
+                    <div class="absolute bottom-6 left-6 bg-brand-surface/90 backdrop-blur border border-brand-primary/30 p-4 rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="800">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded bg-brand-primary flex items-center justify-center text-white font-bold">5.0</div>
+                            <div>
+                                <p class="text-white font-bold text-sm uppercase">Nota Máxima</p>
+                                <p class="text-xs text-gray-400">Reconhecimento MEC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -inset-4 border-2 border-brand-primary/20 rounded-2xl z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="border-y border-white/5 bg-brand-surface/50 relative z-20">
+        <div class="container mx-auto px-6 py-8 flex flex-wrap justify-around items-center gap-6 text-center md:text-left">
+            <div data-aos="fade-up" data-aos-delay="0">
+                <h3 class="text-3xl font-black italic text-white">18</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Meses de Duração</p>
+            </div>
+            <div class="h-8 w-px bg-white/10 hidden md:block"></div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-3xl font-black italic text-white">100%</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Aplicabilidade Prática</p>
+            </div>
+            <div class="h-8 w-px bg-white/10 hidden md:block"></div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-3xl font-black italic text-white">Híbrido</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Online + Prática</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="programa" class="py-24 bg-brand-surface relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">Metodologia</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white uppercase italic">
+                    Abordagem Prática <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-primary">e exemplos do dia a dia</span>
+                </h3>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bg border border-white/10 flex items-center justify-center text-brand-primary text-xl shadow-lg shadow-brand-primary/10 transition hover:scale-110 hover:border-brand-primary"><i class="fas fa-clock"></i></div>
+                        <h4 class="text-xl font-bold text-white">Horário Flexível</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">As aulas serão ministradas um final de semana por mês, no sábado à tarde - 13h30 às 18h e Domingo de manhã - 8h às 12h30.</p>
+                    </div>
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bg border border-white/10 flex items-center justify-center text-brand-primary text-xl shadow-lg shadow-brand-primary/10 transition hover:scale-110 hover:border-brand-primary"><i class="fas fa-video"></i></div>
+                        <h4 class="text-xl font-bold text-white">Aula Ao Vivo</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Você poderá assistir a aula ao vivo ou a gravação que ficará disponível para assistir quando quiser.</p>
+                    </div>
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bg border border-white/10 flex items-center justify-center text-brand-primary text-xl shadow-lg shadow-brand-primary/10 transition hover:scale-110 hover:border-brand-primary"><i class="fas fa-file-alt"></i></div>
+                        <h4 class="text-xl font-bold text-white">Artigos Atualizados</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Artigos sobre o assunto, recentes, selecionados e disponíveis para você.</p>
+                    </div>
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bg border border-white/10 flex items-center justify-center text-brand-primary text-xl shadow-lg shadow-brand-primary/10 transition hover:scale-110 hover:border-brand-primary"><i class="fas fa-bolt"></i></div>
+                        <h4 class="text-xl font-bold text-white">Avaliações Dinâmicas</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Desenvolva suas habilidades e aplique seus conhecimentos através das nossas avaliações ativas.</p>
+                    </div>
+                </div>
+                <div class="relative group h-full" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-primary to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative bg-brand-bg border border-white/10 p-8 md:p-12 rounded-2xl h-full flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest rounded mb-6 w-fit">Exclusivo</div>
+                        <h3 class="text-3xl font-bold text-white mb-4 italic">Método Especialista PRO</h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">O método Especialista PRO, parte essencial da Pós-graduação em Biomecânica, Musculação e Reabilitação Musculoesquelética, foi criado para que você aplique a biomecânica de forma prática, elevando sua credibilidade e aumentando seu faturamento.</p>
+                        <a href="#matricula" class="w-full bg-brand-primary text-white font-bold text-center py-4 rounded-full uppercase tracking-widest hover:shadow-[0_0_20px_#1E64F0] transition transform hover:-translate-y-1">MATRICULE-SE AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-bg relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold text-white uppercase italic leading-tight">
+                    Aqui a sua evolução é <span class="text-brand-primary">constante</span> e seus resultados são <span class="text-brand-primary">visíveis</span>
+                </h2>
+                <p class="mt-6 text-gray-400 text-lg">Através de um método que já formou mais de <strong class="text-white">4 mil alunos</strong>.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group relative bg-brand-surface border border-white/5 p-10 rounded-3xl overflow-hidden hover:border-brand-primary/50 transition-all duration-500" data-aos="fade-right">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fas fa-expand-arrows-alt text-9xl text-brand-primary"></i></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 text-brand-primary text-3xl group-hover:scale-110 transition-transform"><i class="fas fa-layer-group"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 uppercase italic">Sistema expansão da prática</h3>
+                        <p class="text-gray-400 leading-relaxed text-lg">O melhor sistema de aprendizado e prática desenvolvido pela Personal Trainer Academy.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-10 rounded-3xl overflow-hidden hover:border-brand-primary/50 transition-all duration-500" data-aos="fade-left">
+                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fas fa-sync-alt text-9xl text-brand-primary"></i></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 text-brand-primary text-3xl group-hover:rotate-180 transition-transform duration-700"><i class="fas fa-circle-notch"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 uppercase italic">Ciclo de aprendizado constante</h3>
+                        <p class="text-gray-400 leading-relaxed text-lg">O método que vai te fazer conquistar mais clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-surface relative border-b border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">Público Alvo</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white uppercase italic">
+                    Uma Pós-graduação feita para <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">profissionais...</span>
+                </h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="flex gap-6 p-6 rounded-2xl bg-brand-bg border border-white/5 hover:border-brand-primary/30 transition-colors group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="shrink-0 w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors"><i class="fas fa-brain text-xl"></i></div>
+                    <div>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            <strong class="text-white font-bold block mb-1">Especialistas em Biomecânica</strong>
+                            Profissionais que querem se tornar especialistas em Biomecânica com conhecimentos aplicados à musculação e reabilitação musculoesquelética.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-6 p-6 rounded-2xl bg-brand-bg border border-white/5 hover:border-brand-primary/30 transition-colors group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="shrink-0 w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors"><i class="fas fa-certificate text-xl"></i></div>
+                    <div>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            <strong class="text-white font-bold block mb-1">Reconhecimento MEC</strong>
+                            Quem quer sair na frente dos demais profissionais do mercado com o título de pós-graduado reconhecido pelo MEC.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-6 p-6 rounded-2xl bg-brand-bg border border-white/5 hover:border-brand-primary/30 transition-colors group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="shrink-0 w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors"><i class="fas fa-chart-line text-xl"></i></div>
+                    <div>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            <strong class="text-white font-bold block mb-1">Faturamento +15k</strong>
+                            Que pretende destravar o seu potencial e ganhar mais de 15 mil reais com o domínio de conhecimentos práticos e inovadores, se tornando autoridade.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-6 p-6 rounded-2xl bg-brand-bg border border-white/5 hover:border-brand-primary/30 transition-colors group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="shrink-0 w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors"><i class="fas fa-trophy text-xl"></i></div>
+                    <div>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            <strong class="text-white font-bold block mb-1">Carreira de Elite</strong>
+                            E para profissionais que querem avançar o próximo passo nas suas carreiras e se diferenciar da concorrência, ocupando os melhores lugares.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-bg overflow-hidden border-b border-white/5">
+        <div class="container mx-auto px-4 mb-12 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-white uppercase italic leading-tight max-w-4xl mx-auto">
+                Uma equipe de <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-brand-primary">profissionais especializados</span>, que irão te guiar no caminho do sucesso.
+            </h2>
+        </div>
+        <div class="relative w-full overflow-hidden py-4" data-aos="fade-in">
+            <div class="absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-brand-bg to-transparent pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-brand-bg to-transparent pointer-events-none"></div>
+            <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
+                <div class="flex gap-20 px-6">
+                    <img src="img/professores/3.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/4.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/5.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/6.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/7.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/8.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/9.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/10.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/11.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/12.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                </div>
+                <div class="flex gap-20 px-6">
+                    <img src="img/professores/3.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/4.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/5.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/6.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/7.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/8.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/9.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/10.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/11.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                    <img src="img/professores/12.jpg.webp" alt="Professores PTA" class="h-[480px] w-auto object-contain transition-transform hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="curriculo" class="py-24 relative bg-brand-bg feature-grid">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-20" data-aos="fade-up">
+                <h2 class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">Conteúdo Programático</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white uppercase italic">
+                    Do Básico à <span class="text-stroke">Elite</span>
+                </h3>
+                <p class="mt-4 text-gray-400">Uma grade curricular desenhada para cobrir todas as lacunas da sua formação, da célula à venda.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="0">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">01</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Musculação para Grupos Especiais</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Gestantes, hipertensos, diabéticos e idosos. Segurança total na prescrição.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">02</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Posturas e Ergonomia</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Na musculação, trabalho e dia a dia. Garantindo saúde e estética.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">03</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Nutrição Aplicada</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Da reabilitação à estética corporal. A integração necessária.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="150">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">04</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Biomecânica Funcional</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Exercícios com peso do corpo e treinamento funcional.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">05</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Reabilitação MMII</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Prevenção e reabilitação de lesões de membros inferiores.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-brand-primary/50 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover shadow-[0_0_20px_rgba(30,100,240,0.1)]" data-aos="fade-up" data-aos-delay="250">
+                    <div class="absolute top-4 right-4 text-xs font-bold text-white bg-brand-primary px-2 py-1 rounded">DIFERENCIAL</div>
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">06</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Exames Laboratoriais</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Interpretação clínica para oferecer mais credibilidade e precisão.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-gradient-to-br from-brand-surface to-brand-primary/20 border border-brand-primary/30 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute top-4 right-4 text-xs font-bold text-white bg-brand-primary px-2 py-1 rounded">BUSINESS</div>
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">07</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Vendas & Instagram</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Montagem de esteira de produtos e estratégias de venda online.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">08</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Análise Vetorial</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Física aplicada: vetores em exercícios livres e máquinas.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">09</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Hipertrofia MMSS</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Biomecânica aplicada a força e hipertrofia de membros superiores.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="150">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">10</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Quadril, Joelho e Tornozelo</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Doenças, lesões e como reabilitar usando a musculação.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">11</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Coluna & Core</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Biomecânica da coluna, avaliação, reabilitação e treino do core.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="250">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">12</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Marcha e Corrida</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Avaliação biomecânica e prescrição segura para corredores.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="0">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">13</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Avaliação Postural</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Interpretação avançada e prescrição corretiva.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">14</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Mobilidade Articular</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Técnicas para ganho de amplitude e qualidade de movimento.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">15</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Prática MMII</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Biomecânica aplicada na prática para força e hipertrofia.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="150">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">16</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Periodização</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Métodos de treinos na musculação e planejamento a longo prazo.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-white/5 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">17</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Ombro, Cotovelo e Punho</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Protocolos de reabilitação e treinamento seguro.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-brand-surface border border-brand-primary/50 p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1 card-hover" data-aos="fade-up" data-aos-delay="250">
+                    <div class="absolute top-4 right-4 text-xs font-bold text-white bg-brand-primary px-2 py-1 rounded">HOT TOPIC</div>
+                    <span class="absolute -right-4 -top-6 text-9xl font-black text-stroke opacity-20 group-hover:opacity-40 transition select-none">18</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-xl font-bold text-white mb-2 uppercase italic leading-tight">Emagrecimento</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Métodos e técnicas diferenciadas para garantir resultado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-surface border-b border-white/5">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">F.A.Q.</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white uppercase italic mb-6">Perguntas Frequentes</h3>
+                <div class="bg-brand-bg p-6 rounded-2xl border border-white/5 inline-flex flex-col md:flex-row items-center gap-6 mx-auto">
+                    <p class="text-gray-300 text-sm md:text-base max-w-md text-center md:text-left">
+                        Ficou com mais alguma dúvida? Tire rapidamente pelo WhatsApp da nossa equipe!
+                    </p>
+                    <a href="#" class="bg-[#25D366] text-white font-bold uppercase text-sm py-3 px-8 rounded-full hover:bg-[#128C7E] transition flex items-center gap-2 shadow-lg hover:shadow-[#25D366]/20">
+                        <i class="fab fa-whatsapp text-lg"></i> Tirar Dúvidas
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-brand-bg border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brand-primary/30 open:border-brand-primary/50 open:bg-brand-bg/80" data-aos="fade-up" data-aos-delay="0">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="text-lg font-bold text-white group-hover:text-brand-primary transition">Quais são as Formas de Pagamento?</span>
+                        <span class="text-brand-primary transition-transform duration-300 group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">Você pode pagar com qualquer cartão, boleto ou PIX.</p>
+                        <p class="mb-2">Se você optar pelo pagamento com cartão de crédito recorrente, você precisa ter apenas limite suficiente para o pagamento da primeira mensalidade.</p>
+                        <p>Caso queira parcelar o pagamento via boleto bancário, você pode entrar em contato com nossa equipe comercial, é só clicar no botão verde de WhatsApp acima que iremos te ajudar!</p>
+                    </div>
+                </details>
+                <details class="group bg-brand-bg border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brand-primary/30 open:border-brand-primary/50 open:bg-brand-bg/80" data-aos="fade-up" data-aos-delay="50">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="text-lg font-bold text-white group-hover:text-brand-primary transition">Como acesso o contéudo?</span>
+                        <span class="text-brand-primary transition-transform duration-300 group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">O acesso ao Portal do Aluno é enviado para seu e-mail imediatamente após a confirmação do pagamento.</p>
+                        <p class="mb-2">As aulas acontecem todo 4º fim de semana de cada mês, sábado à tarde (das 13h30 às 18h) e Domingo (das 8 às 12h30). Elas são totalmente on-line e AO VIVO.</p>
+                        <p>As aulas ficam gravadas, e caso você não consiga assistir na hora da aula, poderá assistir quantas vezes quiser.</p>
+                    </div>
+                </details>
+                <details class="group bg-brand-bg border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brand-primary/30 open:border-brand-primary/50 open:bg-brand-bg/80" data-aos="fade-up" data-aos-delay="100">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="text-lg font-bold text-white group-hover:text-brand-primary transition">Qual número total de horas da Pós?</span>
+                        <span class="text-brand-primary transition-transform duration-300 group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p>Os cursos compreendem 360 horas de conteúdo. O aluno terá até 21 dias para interagir com as aulas/momentos síncronos e 90 dias para realizar o teste (questionário) da disciplina. O conteúdo poderá ser consultado ao longo de todo o curso.</p>
+                    </div>
+                </details>
+                <details class="group bg-brand-bg border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brand-primary/30 open:border-brand-primary/50 open:bg-brand-bg/80" data-aos="fade-up" data-aos-delay="150">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="text-lg font-bold text-white group-hover:text-brand-primary transition">Possui certificado de conclusão?</span>
+                        <span class="text-brand-primary transition-transform duration-300 group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">Sim, a Pós-graduação em Biomecânica, Musculação e Reabilitação Musculoesquelética possui certificado, reconhecido pelo MEC com a portaria nº 1.058 de 27/12/2021.</p>
+                        <p>Ao concluir a Pós-graduação, você se tornará especialista em Biomecânica, Musculação e Reabilitação Musculoesquelética.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="matricula" class="py-20 bg-gradient-to-t from-black to-brand-bg">
+        <div class="container mx-auto px-6 text-center" data-aos="zoom-in">
+            <div class="max-w-4xl mx-auto bg-brand-surfaceHighlight rounded-3xl p-10 md:p-16 border border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-primary to-blue-400"></div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white uppercase italic mb-6">Pronto para subir de nível?</h2>
+                <p class="text-gray-400 text-lg mb-8">Junte-se a elite dos Personal Trainers do Brasil. Vagas limitadas para a turma de 2026.</p>
+                <button class="bg-brand-primary text-white font-black text-xl py-5 px-12 rounded-full hover:scale-105 transition transform shadow-[0_0_30px_#1E64F080]">
+                    GARANTIR MINHA VAGA AGORA
+                </button>
+                <p class="mt-6 text-sm text-gray-500">Garantia de 30 dias • Certificado MEC • Acesso Imediato</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative bg-[#02060d] pt-20 pb-10 border-t border-white/5 overflow-hidden" data-aos="fade">
+        <div class="absolute bottom-0 left-0 w-full h-full bg-mesh opacity-20 pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+                
+                <div class="lg:col-span-4 space-y-6">
+                    <img src="img/logo.svg" alt="BioMech Academy" class="w-40">
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        A maior referência em pós-graduação para Personal Trainers do Brasil. Formando especialistas e líderes de mercado.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-primary/50">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-primary/50">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-primary/50">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Institucional</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#programa" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Sobre o Curso</a></li>
+                        <li><a href="#curriculo" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Grade Curricular</a></li>
+                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Corpo Docente</a></li>
+                        <li><a href="#depoimentos" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Depoimentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Legal</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Políticas de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Certificação MEC</a></li>
+                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Suporte ao Aluno</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Fale Conosco</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope mt-1 text-brand-primary"></i>
+                            <span>contato@personaltraineracademy.com.br</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fab fa-whatsapp mt-1 text-brand-primary"></i>
+                            <span>(11) 99999-9999 - Atendimento Comercial</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-primary"></i>
+                            <span>Av. Paulista, 1000 - São Paulo, SP</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-xs">
+                    &copy; 2026 Personal Trainer Academy. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-gray-500 text-xs font-bold uppercase">Site Seguro</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,  // Duração das animações em ms
+            offset: 100,    // Distância do topo para ativar
+            once: true,     // Animar apenas uma vez ao rolar
+            easing: 'ease-out-cubic', // Curva de velocidade suave
+        });
+    </script>
+
+</body>
+</html>
