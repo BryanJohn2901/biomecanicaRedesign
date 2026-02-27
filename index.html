@@ -2,9 +2,28 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WBWTPL8');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pós-Graduação em Bodybuilding e Estética Corporal</title>
+    <meta name="description" content="Pós-graduação em Bodybuilding e Estética Corporal reconhecida pelo MEC. Metodologia prática, 18 meses, +4.000 alunos certificados. Matricule-se na Personal Trainer Academy.">
+    <meta property="og:title" content="Pós-Graduação em Bodybuilding e Estética Corporal">
+    <meta property="og:description" content="Pós-graduação reconhecida pelo MEC. Metodologia prática, 18 meses. Matricule-se na Personal Trainer Academy.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -90,11 +109,46 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+
+        /* Modal lead */
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+        }
+        .modal-phone-wrap {
+            display: flex;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #1A1A1A;
+        }
+        .modal-phone-prefix {
+            background: #DC2626;
+            color: white;
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .modal-phone-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 0.75rem 1rem;
+            color: white;
+            outline: none;
+        }
     </style>
 </head>
 
 <body
     class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WBWTPL8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000">
         <div class="container mx-auto max-w-5xl">
@@ -102,7 +156,7 @@
                 class="relative flex items-center justify-between px-6 py-3 rounded-full bg-[#050505]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-brand-primary/30 hover:bg-[#050505]/90">
 
                 <a href="#" class="block hover:opacity-80 transition-opacity duration-300">
-                    <img src="img/logo.png" alt="Personal Trainer Academy" class="h-8 md:h-10 w-auto">
+                    <img src="./assets/logo-D4D5a3rb.png" alt="Personal Trainer Academy" class="h-8 md:h-10 w-auto">
                 </a>
 
                 <div class="hidden md:flex items-center gap-10">
@@ -118,15 +172,15 @@
                         <span
                             class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
-                    <a href="#depoimentos"
+                    <a href="#duvidas"
                         class="text-xs font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
-                        Alunos
+                        Dúvidas frequentes
                         <span
                             class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
                 </div>
 
-                <a href="#matricula"
+                <a href="#" data-open-lead-modal
                     class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-primary px-8 py-2.5 transition-all duration-300 hover:shadow-[0_0_20px_rgba(220,38,38,0.6)] hover:scale-105">
                     <div
                         class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]">
@@ -141,7 +195,7 @@
 
     <section class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="img/bgHero.webp" alt="Background Hero" class="w-full h-full object-cover opacity-60">
+            <img src="./assets/bgHero-DEdxdqbG.webp" alt="Background Hero" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent"></div>
         </div>
 
@@ -171,15 +225,15 @@
                 </p>
 
                 <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#curriculo"
+                    <a href="#" data-open-lead-modal
                         class="bg-white text-brand-bg font-black uppercase py-4 px-8 rounded hover:bg-gray-200 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200">
-                        Ver Grade de 18 Meses <i class="fas fa-arrow-right text-brand-primary"></i>
+                        Matricule-se <i class="fas fa-arrow-right text-brand-primary"></i>
                     </a>
                     <div class="flex items-center gap-4 px-4">
                         <div class="flex -space-x-3">
-                            <div class="w-10 h-10 rounded-full border-2 border-brand-bg bg-gray-600"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-brand-bg bg-gray-500"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-brand-bg bg-gray-400"></div>
+                            <img src="./assets/32-D4BwYog9.jpg" alt="Aluno" class="w-10 h-10 rounded-full border-2 border-brand-bg object-cover">
+                            <img src="./assets/44-DCBA6-oR.jpg" alt="Aluno" class="w-10 h-10 rounded-full border-2 border-brand-bg object-cover">
+                            <img src="./assets/85-DbvuHfe5.jpg" alt="Aluno" class="w-10 h-10 rounded-full border-2 border-brand-bg object-cover">
                         </div>
                         <p class="text-xs text-gray-200 font-medium drop-shadow-md">
                             <strong class="text-white block text-sm">+4.000 Alunos</strong> Certificados
@@ -191,9 +245,7 @@
             <div class="relative" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
                 <div
                     class="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl rotate-2 hover:rotate-0 transition duration-500 bg-black">
-                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop"
-                        alt="Atleta Bodybuilding"
-                        class="w-full h-auto object-cover opacity-80 grayscale hover:grayscale-0 transition duration-700">
+                    <iframe src="https://player.scaleup.com.br/embed/a0ad44c44347d44950e144daec82bd3f673285c0" title="Pós graduação em Bodybuilding.mp4" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0; margin: 0 auto; display: block;"></iframe>
 
                     <div class="absolute bottom-6 left-6 bg-brand-surface/90 backdrop-blur border border-brand-primary/30 p-4 rounded-lg shadow-lg"
                         data-aos="fade-right" data-aos-delay="800">
@@ -295,7 +347,7 @@
                         <p class="text-gray-400 text-base leading-relaxed mb-8">O método Especialista PRO, parte
                             essencial da Pós-graduação, foi criado para que você aplique o Bodybuilding de forma
                             prática, elevando sua credibilidade e aumentando seu faturamento.</p>
-                        <a href="#matricula"
+                        <a href="#" data-open-lead-modal
                             class="w-full bg-brand-primary text-white font-bold text-center py-4 rounded-full uppercase tracking-widest hover:shadow-[0_0_20px_#DC2626] transition transform hover:-translate-y-1">MATRICULE-SE
                             AGORA</a>
                     </div>
@@ -429,75 +481,75 @@
 
             <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
                 <div class="flex gap-20 px-10">
-                    <img src="img/professores/1.webp" alt="Professor PTA"
+                    <img src="./assets/1-CoVtJfb6.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/2.webp" alt="Professor PTA"
+                    <img src="./assets/2-D3rmf5is.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/3.webp" alt="Professor PTA"
+                    <img src="./assets/3-C6VRsbBR.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/4.webp" alt="Professor PTA"
+                    <img src="./assets/4-D51VMqPd.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/5.webp" alt="Professor PTA"
+                    <img src="./assets/5-1qw_-U-q.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/6.webp" alt="Professor PTA"
+                    <img src="./assets/6-De3_M3en.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/7.webp" alt="Professor PTA"
+                    <img src="./assets/7-CadyqIIF.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/8.webp" alt="Professor PTA"
+                    <img src="./assets/8-Btd9GS5D.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/9.webp" alt="Professor PTA"
+                    <img src="./assets/9-Dipcc3bq.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/10.webp" alt="Professor PTA"
+                    <img src="./assets/10-IdZT_d5R.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/11.webp" alt="Professor PTA"
+                    <img src="./assets/11-Dl8UuAz6.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/12.webp" alt="Professor PTA"
+                    <img src="./assets/12-1WPphaco.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/13.webp" alt="Professor PTA"
+                    <img src="./assets/13-QvQBRwMn.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/14.webp" alt="Professor PTA"
+                    <img src="./assets/14-DFFX5MFH.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/15.webp" alt="Professor PTA"
+                    <img src="./assets/15-D3NhhWX8.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/16.webp" alt="Professor PTA"
+                    <img src="./assets/16-CnHE6OKi.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/17.webp" alt="Professor PTA"
+                    <img src="./assets/17-iYTBJlyx.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
                 </div>
                 <div class="flex gap-20 px-10">
-                    <img src="img/professores/1.webp" alt="Professor PTA"
+                    <img src="./assets/1-CoVtJfb6.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/2.webp" alt="Professor PTA"
+                    <img src="./assets/2-D3rmf5is.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/3.webp" alt="Professor PTA"
+                    <img src="./assets/3-C6VRsbBR.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/4.webp" alt="Professor PTA"
+                    <img src="./assets/4-D51VMqPd.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/5.webp" alt="Professor PTA"
+                    <img src="./assets/5-1qw_-U-q.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/6.webp" alt="Professor PTA"
+                    <img src="./assets/6-De3_M3en.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/7.webp" alt="Professor PTA"
+                    <img src="./assets/7-CadyqIIF.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/8.webp" alt="Professor PTA"
+                    <img src="./assets/8-Btd9GS5D.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/9.webp" alt="Professor PTA"
+                    <img src="./assets/9-Dipcc3bq.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/10.webp" alt="Professor PTA"
+                    <img src="./assets/10-IdZT_d5R.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/11.webp" alt="Professor PTA"
+                    <img src="./assets/11-Dl8UuAz6.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/12.webp" alt="Professor PTA"
+                    <img src="./assets/12-1WPphaco.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/13.webp" alt="Professor PTA"
+                    <img src="./assets/13-QvQBRwMn.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/14.webp" alt="Professor PTA"
+                    <img src="./assets/14-DFFX5MFH.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/15.webp" alt="Professor PTA"
+                    <img src="./assets/15-D3NhhWX8.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/16.webp" alt="Professor PTA"
+                    <img src="./assets/16-CnHE6OKi.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
-                    <img src="img/professores/17.webp" alt="Professor PTA"
+                    <img src="./assets/17-iYTBJlyx.webp" alt="Professor PTA" loading="lazy"
                         class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-white/10 shadow-lg">
                 </div>
             </div>
@@ -741,7 +793,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-brand-surface border-b border-white/5">
+    <section id="duvidas" class="py-20 bg-brand-surface border-b border-white/5">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">F.A.Q.</h2>
@@ -751,7 +803,8 @@
                     <p class="text-gray-300 text-sm md:text-base max-w-md text-center md:text-left">
                         Ficou com mais alguma dúvida? Tire rapidamente pelo WhatsApp da nossa equipe!
                     </p>
-                    <a href="#"
+                    <a href="https://wa.me/554188239396?text=Ol%C3%A1%21%20Tenho%20d%C3%BAvidas%20sobre%20a%20P%C3%B3s-gradua%C3%A7%C3%A3o%20em%20Bodybuilding%20e%20Est%C3%A9tica%20Corporal."
+                        target="_blank" rel="noopener noreferrer"
                         class="bg-[#25D366] text-white font-bold uppercase text-sm py-3 px-8 rounded-full hover:bg-[#128C7E] transition flex items-center gap-2 shadow-lg hover:shadow-[#25D366]/20">
                         <i class="fab fa-whatsapp text-lg"></i> Tirar Dúvidas
                     </a>
@@ -838,7 +891,7 @@
                 </h2>
                 <p class="text-gray-400 text-lg mb-8">Junte-se a elite do Bodybuilding no Brasil. Vagas limitadas para a
                     turma de 2026.</p>
-                <button
+                <button type="button" data-open-lead-modal
                     class="bg-brand-primary text-white font-black text-xl py-5 px-12 rounded-full hover:scale-105 transition transform shadow-[0_0_30px_rgba(220,38,38,0.5)]">
                     GARANTIR MINHA VAGA AGORA
                 </button>
@@ -847,28 +900,64 @@
         </div>
     </section>
 
+    <!-- Modal Lead -->
+    <div id="lead-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 modal-backdrop hidden" aria-hidden="true">
+        <div class="bg-brand-surface border border-white/10 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
+            <div class="flex items-center justify-between p-6 border-b border-white/5">
+                <h3 class="text-xl font-bold text-white">Preencha seus dados</h3>
+                <button type="button" id="lead-modal-close" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition" aria-label="Fechar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="form_bb" class="p-6 space-y-5">
+                <input type="hidden" id="lead-utm_source" name="utm_source" value="">
+                <input type="hidden" id="lead-utm_term" name="utm_term" value="">
+                <input type="hidden" id="lead-utm_campaign" name="utm_campaign" value="">
+                <input type="hidden" id="lead-utm_medium" name="utm_medium" value="">
+                <input type="hidden" id="lead-utm_content" name="utm_content" value="">
+                <input type="hidden" id="lead-url" name="url" value="">
+                <div>
+                    <label for="lead-nome" class="block text-sm font-medium text-white mb-2">Nome</label>
+                    <input type="text" id="lead-nome" name="nome" required
+                        class="w-full px-4 py-3 rounded-lg bg-[#1A1A1A] border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
+                        placeholder="Seu nome completo">
+                </div>
+                <div>
+                    <label for="lead-email" class="block text-sm font-medium text-white mb-2">Email</label>
+                    <input type="email" id="lead-email" name="email" required
+                        class="w-full px-4 py-3 rounded-lg bg-[#1A1A1A] border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
+                        placeholder="seu@email.com">
+                </div>
+                <div>
+                    <label for="lead-telefone" class="block text-sm font-medium text-white mb-2">Telefone</label>
+                    <div class="modal-phone-wrap">
+                        <span class="modal-phone-prefix">+55</span>
+                        <input type="tel" id="lead-telefone" name="telefone" required
+                            class="modal-phone-input"
+                            placeholder="11 99999-9999" maxlength="15" inputmode="numeric" pattern="[0-9\s]*"
+                            title="DDD + número">
+                    </div>
+                    <p class="mt-1.5 text-xs text-gray-500">DDD + número (apenas números)</p>
+                </div>
+                <button type="submit" class="w-full bg-brand-primary text-white font-bold py-4 rounded-lg uppercase tracking-wider hover:opacity-90 transition">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+
     <footer class="relative bg-[#02060d] pt-20 pb-10 border-t border-white/5 overflow-hidden" data-aos="fade">
         <div class="absolute bottom-0 left-0 w-full h-full bg-mesh opacity-20 pointer-events-none"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
 
                 <div class="lg:col-span-4 space-y-6">
-                    <img src="logo.png" alt="Personal Trainer Academy"
+                    <img src="./assets/logo-D4D5a3rb.png" alt="Personal Trainer Academy" loading="lazy"
                         class="w-40 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
                     <p class="text-gray-400 text-sm leading-relaxed">
                         A maior referência em pós-graduação para Personal Trainers do Brasil. Formando especialistas e
                         líderes de mercado.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-primary/50">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-primary/50">
-                            <i class="fab fa-whatsapp text-lg"></i>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="lg:col-span-2">
@@ -880,8 +969,8 @@
                         <li><a href="#curriculo"
                                 class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Grade
                                 Curricular</a></li>
-                        <li><a href="#depoimentos"
-                                class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Depoimentos</a>
+                        <li><a href="#duvidas"
+                                class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Dúvidas frequentes</a>
                         </li>
                     </ul>
                 </div>
@@ -902,12 +991,16 @@
                     <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Fale Conosco</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
                         <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-primary"></i>
+                            <span>Av. Rep. Argentina, 1237 - Água Verde, Curitiba - PR, 80620-010</span>
+                        </li>
+                        <li class="flex items-start gap-3">
                             <i class="fas fa-envelope mt-1 text-brand-primary"></i>
                             <span>contato@personaltraineracademy.com.br</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fab fa-whatsapp mt-1 text-brand-primary"></i>
-                            <span>(11) 99999-9999 - Atendimento Comercial</span>
+                            <span>(41) 99982-4070</span>
                         </li>
                     </ul>
                 </div>
@@ -922,17 +1015,208 @@
                     <span class="text-gray-500 text-xs font-bold uppercase">Site Seguro</span>
                 </div>
             </div>
+            <p class="text-center text-gray-600 text-xs mt-6">
+                Desenvolvido por <a href="http://ptadigital.com.br/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-primary transition">ptadigital.com.br</a>
+            </p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Aviso Cookies e LGPD -->
+    <div id="cookie-lgpd-banner" class="fixed bottom-0 left-0 right-0 z-[90] hidden px-4 py-4 md:px-6 md:py-5 bg-brand-surface border-t border-white/10 shadow-[0_-4px_24px_rgba(0,0,0,0.4)]" role="dialog" aria-label="Aviso de cookies e privacidade">
+        <div class="container mx-auto max-w-5xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p class="text-gray-300 text-sm leading-relaxed flex-1">
+                Utilizamos cookies e dados pessoais de acordo com a <strong class="text-white">Lei Geral de Proteção de Dados (LGPD)</strong> para melhorar sua experiência, analisar o uso do site e personalizar conteúdo. Ao continuar navegando, você concorda com nossa <a href="#" class="text-brand-primary hover:underline font-medium">Política de Privacidade</a> e o uso de cookies.
+            </p>
+            <button type="button" id="cookie-lgpd-accept" class="shrink-0 bg-brand-primary text-white font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-lg hover:opacity-90 transition whitespace-nowrap">
+                Aceitar
+            </button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') AOS.init({
             duration: 800,
             offset: 100,
             once: true,
             easing: 'ease-out-cubic',
+            });
         });
+
+        (function () {
+            var REDIRECT_BASE = 'https://chk.eduzz.com/KW8KD4NB01';
+            var WEBHOOK_URL = 'https://hook.us1.make.com/bhigavwc6bfhskmnicov25r6jv9fnt1p?produto=BB4';
+
+            var modal = document.getElementById('lead-modal');
+            var form = document.getElementById('form_bb');
+            var inputPhone = document.getElementById('lead-telefone');
+            var inputNome = document.getElementById('lead-nome');
+            var inputEmail = document.getElementById('lead-email');
+            var inputUtmSource = document.getElementById('lead-utm_source');
+            var inputUtmTerm = document.getElementById('lead-utm_term');
+            var inputUtmCampaign = document.getElementById('lead-utm_campaign');
+            var inputUtmMedium = document.getElementById('lead-utm_medium');
+            var inputUtmContent = document.getElementById('lead-utm_content');
+            var inputUrl = document.getElementById('lead-url');
+
+            function getQueryParam(name) {
+                var match = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : '';
+            }
+            var UTM_STORAGE_KEY = 'lead_utm_params';
+            function getStoredUtms() {
+                try {
+                    var raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+                    return raw ? JSON.parse(raw) : {};
+                } catch (e) {
+                    return {};
+                }
+            }
+            function setStoredUtms(obj) {
+                try {
+                    sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(obj));
+                } catch (e) {}
+            }
+            function fillUtmAndUrl() {
+                var fromQuery = {
+                    utm_source: getQueryParam('utm_source'),
+                    utm_term: getQueryParam('utm_term'),
+                    utm_campaign: getQueryParam('utm_campaign'),
+                    utm_medium: getQueryParam('utm_medium'),
+                    utm_content: getQueryParam('utm_content')
+                };
+                var hasAnyUtm = Object.keys(fromQuery).some(function (k) { return fromQuery[k]; });
+                var stored = getStoredUtms();
+                if (hasAnyUtm) {
+                    stored.utm_source = fromQuery.utm_source || stored.utm_source || '';
+                    stored.utm_term = fromQuery.utm_term || stored.utm_term || '';
+                    stored.utm_campaign = fromQuery.utm_campaign || stored.utm_campaign || '';
+                    stored.utm_medium = fromQuery.utm_medium || stored.utm_medium || '';
+                    stored.utm_content = fromQuery.utm_content || stored.utm_content || '';
+                    stored.url = window.location.href || stored.url || '';
+                    setStoredUtms(stored);
+                }
+                inputUtmSource.value = fromQuery.utm_source || stored.utm_source || '';
+                inputUtmTerm.value = fromQuery.utm_term || stored.utm_term || '';
+                inputUtmCampaign.value = fromQuery.utm_campaign || stored.utm_campaign || '';
+                inputUtmMedium.value = fromQuery.utm_medium || stored.utm_medium || '';
+                inputUtmContent.value = fromQuery.utm_content || stored.utm_content || '';
+                inputUrl.value = window.location.href || stored.url || '';
+            }
+
+            function openModal() {
+                fillUtmAndUrl();
+                modal.classList.remove('hidden');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('[data-open-lead-modal]').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+            document.getElementById('lead-modal-close').addEventListener('click', closeModal);
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) closeModal();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+            });
+            fillUtmAndUrl();
+            var preName = getQueryParam('name');
+            var preEmail = getQueryParam('email');
+            var prePhone = getQueryParam('phone');
+            if (preName) inputNome.value = preName;
+            if (preEmail) inputEmail.value = preEmail;
+            if (prePhone) {
+                var digits = prePhone.replace(/\D/g, '');
+                if (digits.length <= 2) inputPhone.value = prePhone;
+                else inputPhone.value = digits.slice(0, 2) + ' ' + digits.slice(2, 7) + (digits.length > 7 ? '-' + digits.slice(7, 11) : '');
+            }
+
+            // Telefone: apenas números; exibição opcional 11 99999-9999
+            inputPhone.addEventListener('input', function () {
+                var v = this.value.replace(/\D/g, '');
+                if (v.length <= 2) this.value = v;
+                else this.value = v.slice(0, 2) + ' ' + v.slice(2, 7) + (v.length > 7 ? '-' + v.slice(7, 11) : '');
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var nome = (inputNome.value || '').trim();
+                var email = (inputEmail.value || '').trim();
+                var raw = (inputPhone.value || '').replace(/\D/g, '');
+                var telefone = '+55' + raw;
+                if (!nome || !email || raw.length < 10) {
+                    alert('Preencha nome, e-mail e telefone (DDD + número).');
+                    return;
+                }
+                var utm_source = (inputUtmSource.value || '').trim();
+                var utm_term = (inputUtmTerm.value || '').trim();
+                var utm_campaign = (inputUtmCampaign.value || '').trim();
+                var utm_medium = (inputUtmMedium.value || '').trim();
+                var utm_content = (inputUtmContent.value || '').trim();
+                var url = (inputUrl.value || window.location.href || '').trim();
+
+                var payload = { nome: nome, email: email, telefone: telefone, utm_source: utm_source, utm_term: utm_term, utm_campaign: utm_campaign, utm_medium: utm_medium, utm_content: utm_content, url: url };
+                var submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+
+                var redirectParams = new URLSearchParams({
+                    name: nome,
+                    email: email,
+                    phone: telefone,
+                    utm_source: utm_source,
+                    utm_term: utm_term,
+                    utm_campaign: utm_campaign,
+                    utm_medium: utm_medium,
+                    utm_content: utm_content,
+                    url: url
+                });
+                var redirectUrl = REDIRECT_BASE + '?' + redirectParams.toString();
+
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).then(function () {
+                    window.location.href = redirectUrl;
+                }).catch(function () {
+                    window.location.href = redirectUrl;
+                });
+            });
+        })();
+
+        // Aviso Cookies e LGPD
+        (function () {
+            var BANNER_ID = 'cookie-lgpd-banner';
+            var STORAGE_KEY = 'cookie_lgpd_consent';
+            var banner = document.getElementById(BANNER_ID);
+            var acceptBtn = document.getElementById('cookie-lgpd-accept');
+            if (!banner || !acceptBtn) return;
+            try {
+                if (localStorage.getItem(STORAGE_KEY) === 'true') {
+                    banner.classList.add('hidden');
+                    return;
+                }
+                banner.classList.remove('hidden');
+            } catch (e) {
+                banner.classList.remove('hidden');
+            }
+            acceptBtn.addEventListener('click', function () {
+                try { localStorage.setItem(STORAGE_KEY, 'true'); } catch (e) {}
+                banner.classList.add('hidden');
+            });
+        })();
     </script>
 
 </body>
