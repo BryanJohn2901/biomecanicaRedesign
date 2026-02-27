@@ -1,0 +1,11 @@
+{
+  "name": "biomecanica-redesign",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i src/input.css -o dist/css/style.css --minify",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

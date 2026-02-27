@@ -1,0 +1,33 @@
+# Deploy — Pós Biomecânica
+
+Suba o conteúdo desta pasta para a raiz do seu domínio (ou subpasta /biomecanica).
+
+## Antes de publicar
+
+1. **Imagens WebP**  
+   Converta e coloque na pasta `img/`:
+   - `capaVideoHero.png` → `capaVideoHero.webp`
+   - `depoinemtos/depimentos.jpg` → `depoinemtos/depimentos.webp`
+
+2. **Open Graph**  
+   Crie uma imagem 1200×630 px e salve como:
+   - `img/og-biomecanica-1200x630.webp`
+
+3. **Favicon**  
+   Adicione em `img/`:
+   - `favicon.svg` e/ou `favicon-32x32.png`, `favicon-16x16.png`
+   - `apple-touch-icon.png` (180×180)
+
+4. **URL**  
+   Troque `https://www.personaltraineracademy.com.br/biomecanica` no `index.html` (canonical e meta og:url / twitter:url) pela URL real do site.
+
+## Rebuild do CSS (Tailwind)
+
+Na raiz do projeto (fora de `dist/`):
+
+```bash
+npm install
+npm run build:css
+```
+
+Depois copie `dist/css/style.css` para o servidor junto com o resto da pasta `dist/`.
