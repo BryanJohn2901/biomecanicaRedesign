@@ -1,0 +1,12 @@
+{
+  "name": "bodybuilding-redesign",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/css/style.css --minify",
+    "build:copy": "cp -r assets dist/ 2>/dev/null || true",
+    "build": "npm run build:css && npm run build:copy"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
