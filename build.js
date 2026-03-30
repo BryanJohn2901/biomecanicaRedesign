@@ -42,6 +42,11 @@ function escapeAttr(s) {
     .replace(/>/g, '&gt;');
 }
 
+function ensureInHead(html, testRegex, tag) {
+  if (testRegex.test(html)) return html;
+  return html.replace(/<\/head>/i, `${tag}</head>`);
+}
+
 async function main() {
   if (!fs.existsSync(SRC_INDEX)) throw new Error(`Nao encontrei ${SRC_INDEX}`);
   if (!fs.existsSync(SRC_IMG_DIR)) throw new Error(`Nao encontrei ${SRC_IMG_DIR}`);
@@ -135,26 +140,71 @@ async function main() {
   const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
   const title = titleMatch ? titleMatch[1] : 'Pós-graduação em Biomecânica — Especialista pro';
 
-  // adiciona tags somente se nao existirem
-  const seoBlock = [
-    `<meta name="description" content="${escapeAttr(description)}">`,
-    `<link rel="canonical" href="${canonicalUrl}">`,
-    `<meta property="og:title" content="${escapeAttr(title)}">`,
-    `<meta property="og:description" content="${escapeAttr(description)}">`,
-    `<meta property="og:image" content="${escapeAttr(ogImageUrl)}">`,
-    `<meta property="og:url" content="${escapeAttr(canonicalUrl)}">`,
-    `<meta property="og:type" content="website">`,
-    `<meta name="twitter:card" content="summary_large_image">`,
-    `<meta name="twitter:title" content="${escapeAttr(title)}">`,
-    `<meta name="twitter:description" content="${escapeAttr(description)}">`,
-    `<meta name="twitter:image" content="${escapeAttr(ogImageUrl)}">`,
-    `<meta name="robots" content="index,follow">`,
-    `<meta name="theme-color" content="#030912">`,
-  ].join('');
-
-  if (!/<meta\s+name=["']description["']/.test(html)) {
-    html = html.replace(/(<title>[^<]+<\/title>)/i, `$1${seoBlock}`);
-  }
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']description["']/i,
+    `<meta name="description" content="${escapeAttr(description)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<link\s+rel=["']canonical["']/i,
+    `<link rel="canonical" href="${canonicalUrl}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+property=["']og:title["']/i,
+    `<meta property="og:title" content="${escapeAttr(title)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+property=["']og:description["']/i,
+    `<meta property="og:description" content="${escapeAttr(description)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+property=["']og:image["']/i,
+    `<meta property="og:image" content="${escapeAttr(ogImageUrl)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+property=["']og:url["']/i,
+    `<meta property="og:url" content="${escapeAttr(canonicalUrl)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+property=["']og:type["']/i,
+    `<meta property="og:type" content="website">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']twitter:card["']/i,
+    `<meta name="twitter:card" content="summary_large_image">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']twitter:title["']/i,
+    `<meta name="twitter:title" content="${escapeAttr(title)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']twitter:description["']/i,
+    `<meta name="twitter:description" content="${escapeAttr(description)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']twitter:image["']/i,
+    `<meta name="twitter:image" content="${escapeAttr(ogImageUrl)}">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']robots["']/i,
+    `<meta name="robots" content="index,follow">`
+  );
+  html = ensureInHead(
+    html,
+    /<meta\s+name=["']theme-color["']/i,
+    `<meta name="theme-color" content="#030912">`
+  );
 
   // performance hints (preconnect para CDNs/servicos usados)
   if (!html.includes('href="https://cdnjs.cloudflare.com"')) {
@@ -178,7 +228,7 @@ async function main() {
 
   // 5.4) separar JS inline para dist/js/main.js (preservar GTM)
   // encontra o script que contem WEBHOOK_URL (nosso JS principal)
-  const webhookPos = html.indexOf('var WEBHOOK_URL');
+  const webhookPos = html.indexOf('WEBHOOK_URL');
   if (webhookPos === -1) throw new Error('Nao encontrei WEBHOOK_URL no HTML');
 
   const scriptStart = html.lastIndexOf('<script>', webhookPos);
