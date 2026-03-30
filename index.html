@@ -139,6 +139,7 @@
             color: white;
             outline: none;
         }
+
     </style>
 </head>
 
@@ -1045,7 +1046,7 @@
         });
 
         (function () {
-            var REDIRECT_BASE = 'https://chk.eduzz.com/KW8KD4NB01';
+            var REDIRECT_URL = 'https://pos.personaltraineracademy.com.br/obg-obrigado-bb/';
             var WEBHOOK_URL = 'https://hook.us1.make.com/bhigavwc6bfhskmnicov25r6jv9fnt1p?produto=BB4';
 
             var modal = document.getElementById('lead-modal');
@@ -1171,18 +1172,7 @@
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Enviando...';
 
-                var redirectParams = new URLSearchParams({
-                    name: nome,
-                    email: email,
-                    phone: telefone,
-                    utm_source: utm_source,
-                    utm_term: utm_term,
-                    utm_campaign: utm_campaign,
-                    utm_medium: utm_medium,
-                    utm_content: utm_content,
-                    url: url
-                });
-                var redirectUrl = REDIRECT_BASE + '?' + redirectParams.toString();
+                var redirectUrl = REDIRECT_URL;
 
                 fetch(WEBHOOK_URL, {
                     method: 'POST',
