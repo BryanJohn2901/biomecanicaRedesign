@@ -1,0 +1,17 @@
+{
+  "name": "fisiologia-pos",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:css": "npx tailwindcss -i src/input.css -o dist/css/style.css --minify"
+  },
+  "devDependencies": {
+    "cheerio": "latest",
+    "clean-css": "latest",
+    "html-minifier-terser": "latest",
+    "sharp": "latest",
+    "tailwindcss": "^3.4.0",
+    "terser": "latest"
+  }
+}

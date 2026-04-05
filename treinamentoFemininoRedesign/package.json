@@ -1,0 +1,16 @@
+{
+  "name": "treinamento-feminino-pta",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:dev": "tailwindcss -i src/input.css -o output.css",
+    "build:css": "tailwindcss -i src/input.css -o dist/css/style.css --minify"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.0",
+    "terser": "^5.46.1"
+  }
+}

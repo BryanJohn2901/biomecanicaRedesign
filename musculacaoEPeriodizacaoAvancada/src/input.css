@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px hsla(0, 0%, 100%, 0.1);
+    color: transparent;
+  }
+  .card-hover:hover .text-stroke {
+    -webkit-text-stroke: 1px rgba(94, 127, 170, 0.3);
+  }
+  .feature-grid {
+    background-image:
+      linear-gradient(hsla(0, 0%, 100%, 0.03) 1px, transparent 0),
+      linear-gradient(90deg, hsla(0, 0%, 100%, 0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+  #popup-inscricao[aria-hidden="false"] {
+    display: flex;
+  }
+  .hero-bg-mobile {
+    object-position: 75% center;
+  }
+}

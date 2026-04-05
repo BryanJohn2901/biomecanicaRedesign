@@ -1,0 +1,12 @@
+# Dependências
+node_modules/
+
+# Temporários de build / editor
+.tmp-tailwind-build.css
+*.log
+.DS_Store
+Thumbs.db
+
+# Ambiente
+.env
+.env.*
