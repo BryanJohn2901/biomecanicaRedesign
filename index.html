@@ -84,7 +84,7 @@
 <body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW3SWDMG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 hidden md:block">
+    <nav class="fixed top-6 md:top-8 left-0 right-0 z-50 px-4 md:px-0 hidden md:block transition-all">
         <div class="container mx-auto max-w-6xl">
             <div class="relative flex items-center justify-between px-6 py-3 rounded-full glass-strong shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-brand-primary/40 hover:shadow-[0_12px_40px_0_rgba(30,100,240,0.15)]">
                 <a href="#" class="block hover:opacity-80 transition-opacity duration-300">
@@ -120,13 +120,16 @@
         </div>
     </nav>
 
-    <section class="relative min-h-screen pt-24 md:pt-32 pb-12 md:pb-20 flex items-center overflow-hidden">
+    <section class="relative min-h-screen pt-32 md:pt-40 pb-12 md:pb-20 flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="img/heroBg.webp" alt="" class="w-full h-full object-cover animate-[pulse_10s_infinite_alternate] opacity-40" width="1920" height="1080" fetchpriority="high">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/ANDRE-1.png">
+                <img src="img/andre%20(1).png" alt="Professor André na capa da pós-graduação" class="w-full h-full object-cover object-top md:object-center animate-[pulse_10s_infinite_alternate] opacity-40" width="1920" height="1080" fetchpriority="high">
+            </picture>
         </div>
         <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none max-w-[100vw]"></div>
 
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 mt-[160px] sm:mt-[200px] lg:mt-0">
             <div class="space-y-6 flex flex-col text-center lg:text-left items-center lg:items-start" data-aos="fade-right">
                 <div class="flex justify-center lg:justify-start mb-4">
                     <img src="img/logo.svg" alt="BioMech Academy" class="h-8 md:h-10 w-auto" width="120" height="40" fetchpriority="high" onerror="this.src='https://via.placeholder.com/120x40/000000/FFFFFF?text=LOGO'">
@@ -724,7 +727,7 @@
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="font-sans text-3xl md:text-5xl font-black text-white mb-6 uppercase">Perguntas Frequentes</h2>
-                <a href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 font-bold py-3 px-6 rounded-full hover:bg-[#25D366]/20 transition shadow-lg text-sm text-center max-w-full">
+                <a href="https://wa.me/5541988239396?text=Ol%C3%A1%2C+tenho+d%C3%BAvidas+sobre+a+p%C3%B3s+em+Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 font-bold py-3 px-6 rounded-full hover:bg-[#25D366]/20 transition shadow-lg text-sm text-center max-w-full">
                     <i class="fab fa-whatsapp text-lg shrink-0"></i> <span>Ficou com alguma dúvida?</span>
                 </a>
             </div>
@@ -770,7 +773,7 @@
         </div>
     </section>
 
-    <footer class="relative bg-brand-darkgray border-t border-white/5 pt-16 pb-24">
+    <footer class="relative bg-brand-darkgray border-t border-white/5 pt-16 pb-32">
         <div class="container mx-auto px-6 relative z-10 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
                 <div class="lg:col-span-5 space-y-4">
@@ -800,12 +803,16 @@
                     <ul class="space-y-3 text-sm text-gray-500">
                         <li>Av. Rep. Argentina, 1237</li>
                         <li>Curitiba — PR</li>
-                        <li><a href="#" class="hover:text-brand-primary transition-colors">(41) 99999-9999</a></li>
+                        <li><a href="tel:+554198823-9396" class="hover:text-brand-primary transition-colors">(41) 98823-9396</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-600 text-xs">&copy; 2026 Personal Trainer Academy. Todos os direitos reservados.</p>
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-center md:text-left">
+                    <p class="text-gray-600 text-xs">&copy; 2026 Personal Trainer Academy. Todos os direitos reservados.</p>
+                    <span class="hidden sm:inline text-gray-600" aria-hidden="true">·</span>
+                    <a href="tel:+554198823-9396" class="text-gray-500 text-xs hover:text-white transition-colors">Suporte: (41) 98823-9396</a>
+                </div>
                 <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500">
                     <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Site Seguro
                 </div>
@@ -813,7 +820,7 @@
         </div>
     </footer>
 
-    <div id="aviso-cookies" class="fixed bottom-24 right-4 md:bottom-20 md:right-6 z-[90] max-w-xs p-5 rounded-2xl bg-brand-surface/95 backdrop-blur-xl border border-brand-primary/20 shadow-[0_10px_40px_rgba(0,0,0,0.8)] transform transition-all duration-500 translate-y-20 opacity-0 pointer-events-none flex flex-col gap-4">
+    <div id="aviso-cookies" class="fixed bottom-28 right-4 md:bottom-28 md:right-6 z-[90] max-w-xs p-5 rounded-2xl bg-brand-surface/95 backdrop-blur-xl border border-brand-primary/20 shadow-[0_10px_40px_rgba(0,0,0,0.8)] transform transition-all duration-500 translate-y-20 opacity-0 pointer-events-none flex flex-col gap-4">
         <div class="flex items-start gap-3">
             <div class="w-10 h-10 shrink-0 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/30">
                 <i class="fas fa-cookie-bite text-lg"></i>
@@ -835,7 +842,21 @@
         </div>
     </div>
 
-    <div id="popup-azul" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" aria-hidden="true">
+    <div class="fixed bottom-0 left-0 right-0 z-[100] bg-green-600 border-t border-green-400/50 overflow-hidden shadow-[0_-10px_40px_rgba(22,163,74,0.4)]">
+        <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]"></div>
+        
+        <div class="container mx-auto px-4 py-3 relative flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+            <p class="text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.05em] text-white text-center">
+                Matricule-se e garanta a <span class="font-black text-yellow-300">camisa oficial do Time de Especialistas</span> <span class="hidden sm:inline mx-1">|</span><br class="block sm:hidden"> <span class="font-bold animate-pulse text-green-200">EDIÇÃO LIMITADA</span>
+            </p>
+
+            <button onclick="abrirPopupAzul(); return false;" class="relative z-10 bg-white text-green-700 font-black text-[10px] sm:text-xs px-6 py-2.5 rounded-full uppercase tracking-wider hover:scale-105 hover:bg-gray-100 transition-all shadow-xl shrink-0">
+                Garantir Minha Camisa
+            </button>
+        </div>
+    </div>
+
+    <div id="popup-azul" class="fixed inset-0 z-[105] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" aria-hidden="true">
         <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-[0_0_50px_rgba(30,100,240,0.2)] max-w-md w-full p-8 modal-content transform scale-95 transition-transform duration-300">
             <button type="button" onclick="fecharPopupAzul()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 hover:bg-brand-primary/20 flex items-center justify-center text-gray-400 hover:text-white transition">
                 <i class="fas fa-times"></i>
@@ -861,6 +882,12 @@
                     </div>
                     <p class="error-msg text-red-400 text-xs mt-1 hidden">Informe o DDD e o número completo.</p>
                 </div>
+                <input type="hidden" id="utm_source" name="utm_source" value="">
+                <input type="hidden" id="utm_term" name="utm_term" value="">
+                <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+                <input type="hidden" id="utm_medium" name="utm_medium" value="">
+                <input type="hidden" id="utm_content" name="utm_content" value="">
+                <input type="hidden" id="url" name="url" value="">
                 <button type="submit" class="w-full bg-brand-primary text-white font-sans font-bold py-4 mt-4 rounded-xl uppercase tracking-widest hover:shadow-[0_0_20px_rgba(30,100,240,0.6)] transition btn-submit">
                     Avançar para Pagamento
                 </button>
@@ -926,6 +953,19 @@
         // Controle de Modais Seguro
         function abrirPopupAzul() {
             const m = document.getElementById('popup-azul');
+            const utm = utmsParaWebhook();
+            const uSource = document.getElementById('utm_source');
+            const uTerm = document.getElementById('utm_term');
+            const uCampaign = document.getElementById('utm_campaign');
+            const uMedium = document.getElementById('utm_medium');
+            const uContent = document.getElementById('utm_content');
+            const urlInput = document.getElementById('url');
+            if (uSource) uSource.value = utm.utm_source || '';
+            if (uTerm) uTerm.value = utm.utm_term || '';
+            if (uCampaign) uCampaign.value = utm.utm_campaign || '';
+            if (uMedium) uMedium.value = utm.utm_medium || '';
+            if (uContent) uContent.value = utm.utm_content || '';
+            if (urlInput) urlInput.value = window.location.href;
             m.classList.remove('hidden');
             m.classList.add('flex');
             setTimeout(() => {
@@ -1003,26 +1043,28 @@
 
             const nome = form.nome.value.trim();
             const email = form.email.value.trim();
-            const telefoneFormatado = '+55' + num;
+            let telefone = num;
+            telefone = '+55' + telefone;
             const urlAtual = window.location.href;
             const ut = utmsParaWebhook();
             const produto = 'BM9';
+            const urlInput = document.getElementById('url');
+            if (urlInput) urlInput.value = urlAtual;
 
             const payload = {
                 nome,
                 email,
-                telefone: telefoneFormatado,
-                utm_source: ut.utm_source,
-                utm_medium: ut.utm_medium,
-                utm_campaign: ut.utm_campaign,
-                utm_term: ut.utm_term,
-                utm_content: ut.utm_content,
-                url: urlAtual,
-                produto
+                telefone: telefone,
+                utm_source: document.getElementById('utm_source')?.value || '',
+                utm_term: document.getElementById('utm_term')?.value || '',
+                utm_campaign: document.getElementById('utm_campaign')?.value || '',
+                utm_medium: document.getElementById('utm_medium')?.value || '',
+                utm_content: document.getElementById('utm_content')?.value || '',
+                url: document.getElementById('url')?.value || window.location.href
             };
 
             const WEBHOOK = 'https://hook.us1.make.com/bhigavwc6bfhskmnicov25r6jv9fnt1p?produto=' + produto;
-            const REDIRECT = 'https://pos.personaltraineracademy.com.br/obg-b/';
+            const REDIRECT = 'https://wa.me/5541988239396?text=Quero%20saber%20mais%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica%20e%20reabilita%C3%A7%C3%A3o%20de%20les%C3%B5es';
 
             try {
                 await fetch(WEBHOOK, {
@@ -1037,7 +1079,7 @@
                 window.location.href = REDIRECT + sep +
                     'nome=' + encodeURIComponent(nome) +
                     '&email=' + encodeURIComponent(email) +
-                    '&telefone=' + encodeURIComponent(telefoneFormatado) +
+                    '&telefone=' + encodeURIComponent(telefone) +
                     '&utm_source=' + encodeURIComponent(ut.utm_source) +
                     '&utm_term=' + encodeURIComponent(ut.utm_term) +
                     '&utm_campaign=' + encodeURIComponent(ut.utm_campaign) +

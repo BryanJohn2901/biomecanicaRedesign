@@ -130,6 +130,8 @@ async function main() {
   // restante das imagens locais
   html = html.replace(/src=(["'])img\//g, 'src=$1assets/img/');
   html = html.replace(/href=(["'])img\//g, 'href=$1assets/img/');
+  // imagens em <source srcset="..."> (hero mobile e similares)
+  html = html.replace(/srcset=(["'])img\//g, 'srcset=$1assets/img/');
 
   // 5.3) inserir SEO tecnico no <head>
   const canonicalUrl = 'https://pos.personaltraineracademy.com.br/';
