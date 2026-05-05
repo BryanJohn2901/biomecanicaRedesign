@@ -80,6 +80,34 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
+
+    <style id="estilo-faixa-copa">
+        #faixa-copa { font-family: 'Inter', sans-serif; }
+        #faixa-copa-fx { display: none; }
+        #faixa-copa-content { display: flex; align-items: center; justify-content: center; padding: 16px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 99999; gap: 12px; flex-direction: column; background-color: #15803d; border-bottom: 1px solid rgba(74, 222, 128, 0.4); box-shadow: 0 10px 30px rgba(21, 128, 61, 0.35); }
+        #faixa-copa-text { color: #ffffff; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 0; line-height: 1.4; }
+        #faixa-copa-highlight { color: #fde047; font-weight: 900; }
+        #faixa-copa-pulse { color: #bbf7d0; font-weight: 800; animation: pulseCopa 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        #faixa-copa-btn { display: none; background-color: #ffffff; color: #15803d; font-weight: 900; font-size: 11px; padding: 12px 30px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border: none; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease; white-space: nowrap; flex-shrink: 0; margin: 0; }
+        #faixa-copa-mobile-cta { display: flex; justify-content: center; align-items: center; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999; padding: 14px 20px 16px; background-color: #15803d; border-top: 1px solid rgba(74, 222, 128, 0.35); box-shadow: 0 -10px 30px rgba(21, 128, 61, 0.35); }
+        #faixa-copa-btn-mobile { background-color: #ffffff; color: #15803d; font-weight: 900; font-size: 11px; padding: 12px 30px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border: none; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease; white-space: nowrap; margin: 0; }
+        #faixa-copa-btn:hover { transform: scale(1.05); }
+        #faixa-copa-btn-mobile:hover { transform: scale(1.05); }
+        .faixa-copa-separator { display: none; opacity: 0.5; margin: 0 4px; }
+        @keyframes pulseCopa { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        @keyframes shimmerCopa { 100% { transform: translateX(100%); } }
+        
+        /* Regra para manter em uma única linha no Desktop */
+        @media (min-width: 768px) {
+            #faixa-copa { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999; background-color: #15803d; border-top: 1px solid rgba(74, 222, 128, 0.4); box-shadow: 0 -10px 40px rgba(21, 128, 61, 0.45); overflow: hidden; }
+            #faixa-copa-fx { display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transform: translateX(-100%); animation: shimmerCopa 3s infinite; }
+            #faixa-copa-content { position: relative; top: auto; left: auto; right: auto; z-index: 1; border-bottom: none; box-shadow: none; flex-direction: row; gap: 24px; }
+            #faixa-copa-text { flex-direction: row; font-size: 14px; white-space: nowrap; }
+            #faixa-copa-btn { display: inline-flex; }
+            #faixa-copa-mobile-cta { display: none; }
+            .faixa-copa-separator { display: inline; }
+        }
+    </style>
 </head>
 <body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW3SWDMG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -842,15 +870,18 @@
         </div>
     </div>
 
-    <div class="fixed bottom-0 left-0 right-0 z-[100] bg-green-600 border-t border-green-400/50 overflow-hidden shadow-[0_-10px_40px_rgba(22,163,74,0.4)]">
-        <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]"></div>
-        
-        <div class="container mx-auto px-4 py-3 relative flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-            <p class="text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.05em] text-white text-center">
-                Matricule-se e garanta a <span class="font-black text-yellow-300">camisa oficial do Time de Especialistas</span> <span class="hidden sm:inline mx-1">|</span><br class="block sm:hidden"> <span class="font-bold animate-pulse text-green-200">EDIÇÃO LIMITADA</span>
+    <div id="faixa-copa">
+        <div id="faixa-copa-fx"></div>
+        <div id="faixa-copa-content">
+            <p id="faixa-copa-text">
+                <span><strong id="faixa-copa-highlight">Matricule-se agora</strong> na pós-graduação e receba a <strong id="faixa-copa-highlight">camiseta exclusiva</strong> do time de especialistas <span id="faixa-copa-pulse">em casa</span></span>
             </p>
-
-            <button onclick="abrirPopupAzul(); return false;" class="relative z-10 bg-white text-green-700 font-black text-[10px] sm:text-xs px-6 py-2.5 rounded-full uppercase tracking-wider hover:scale-105 hover:bg-gray-100 transition-all shadow-xl shrink-0">
+            <button type="button" id="faixa-copa-btn" onclick="abrirPopupAzul(); return false;">
+                Garantir Minha Camisa
+            </button>
+        </div>
+        <div id="faixa-copa-mobile-cta">
+            <button type="button" id="faixa-copa-btn-mobile" onclick="abrirPopupAzul(); return false;">
                 Garantir Minha Camisa
             </button>
         </div>
