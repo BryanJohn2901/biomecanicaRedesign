@@ -229,9 +229,12 @@ async function main() {
   }
 
   // 5.4) separar JS inline para dist/js/main.js (preservar GTM)
-  // encontra o script que contem WEBHOOK / fetch(WEBHOOK (nosso JS principal)
-  const webhookPos = html.indexOf('await fetch(WEBHOOK');
-  if (webhookPos === -1) throw new Error('Nao encontrei fetch(WEBHOOK) no HTML');
+  // encontra o script principal (fluxo de envio do formulario)
+  const webhookPos =
+    html.indexOf('await fetch(WEBHOOK') !== -1
+      ? html.indexOf('await fetch(WEBHOOK')
+      : html.indexOf('const payload =');
+  if (webhookPos === -1) throw new Error('Nao encontrei script principal de envio no HTML');
 
   const scriptStart = html.lastIndexOf('<script>', webhookPos);
   const scriptEnd = html.indexOf('</script>', webhookPos);

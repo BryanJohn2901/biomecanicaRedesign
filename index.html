@@ -79,6 +79,19 @@
         
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        .professors-marquee { cursor: grab; user-select: none; touch-action: pan-y; }
+        .professors-marquee.dragging { cursor: grabbing; }
+        .professors-track { will-change: transform; }
+        @media (max-width: 767px) {
+            .professors-marquee { overflow-x: auto !important; overflow-y: hidden !important; scroll-snap-type: x mandatory; cursor: default; touch-action: auto; -webkit-overflow-scrolling: touch; }
+            .professors-marquee.dragging { cursor: default; }
+            .professors-track { transform: none !important; }
+            #professors-track > [aria-hidden="true"] { display: none; }
+            #professors-track > [data-professors-group] { padding-left: 0 !important; padding-right: 0 !important; gap: 8px !important; }
+            #professors-track > [data-professors-group] > img { scroll-snap-align: start; width: calc(50vw - 6px) !important; max-width: calc(50vw - 6px) !important; height: auto !important; flex-shrink: 0; }
+            #professors-track > [data-professors-group] > div { scroll-snap-align: start; width: calc(50vw - 6px) !important; max-width: calc(50vw - 6px) !important; height: auto !important; flex-shrink: 0; }
+            #professors-track > [data-professors-group] > div img { width: 100% !important; max-width: 100% !important; height: auto !important; }
+        }
     </style>
 
     <style id="estilo-faixa-copa">
@@ -436,50 +449,50 @@
             <p class="text-gray-400 text-lg max-w-3xl mx-auto">Uma equipe de especialistas com experiência clínica real, formando os profissionais que estão ocupando os melhores lugares do mercado.</p>
         </div>
         
-        <div class="relative w-full overflow-hidden py-4" data-aos="fade-in">
+        <div id="professors-marquee" class="professors-marquee relative w-full overflow-hidden py-4" data-aos="fade-in">
             <div class="absolute inset-y-0 left-0 w-12 md:w-24 z-10 bg-gradient-to-r from-brand-surface to-transparent pointer-events-none"></div>
             <div class="absolute inset-y-0 right-0 w-12 md:w-24 z-10 bg-gradient-to-l from-brand-surface to-transparent pointer-events-none"></div>
-            
-            <div class="flex w-max animate-marquee">
-                <div class="flex gap-4 md:gap-8 px-2 md:px-4">
-                    <img src="img/professores/1.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/2.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/3.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/4.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/5.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/6.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/7.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/8.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/9.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/10.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/11.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/12.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/13.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/14.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/15.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/16.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/17.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/18.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+
+            <div id="professors-track" class="professors-track flex w-max">
+                <div class="flex gap-4 md:gap-8 px-2 md:px-4" data-professors-group>
+                    <img src="img/professores/1.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/2.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/3.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/4.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/5.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/6.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/7.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/8.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/9.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/10.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/11.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/12.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/13.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/14.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/15.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/16.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/17.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/18.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
                 </div>
-                <div class="flex gap-4 md:gap-8 px-2 md:px-4">
-                    <img src="img/professores/1.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/2.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/3.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/4.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/5.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/6.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/7.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/8.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/9.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/10.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/11.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/12.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/13.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/14.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/15.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/16.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/17.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/18.svg" alt="Professor" class="h-[200px] sm:h-[250px] md:h-[350px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                <div class="flex gap-4 md:gap-8 px-2 md:px-4" aria-hidden="true">
+                    <img src="img/professores/1.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/2.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/3.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/4.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/5.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/6.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/7.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/8.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/9.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/10.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/11.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/12.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/13.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/14.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/15.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/16.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/17.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/professores/18.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
                 </div>
             </div>
         </div>
@@ -1083,8 +1096,8 @@
             if (urlInput) urlInput.value = urlAtual;
 
             const payload = {
-                nome,
-                email,
+                nome: nome,
+                email: email,
                 telefone: telefone,
                 utm_source: document.getElementById('utm_source')?.value || '',
                 utm_term: document.getElementById('utm_term')?.value || '',
@@ -1098,10 +1111,21 @@
             const REDIRECT = 'https://wa.me/5541995395588?text=Quero%20saber%20mais%20sobre%20a%20p%C3%B3s%20gradua%C3%A7%C3%A3o%20em%20Biomec%C3%A2nica%20e%20reabilita%C3%A7%C3%A3o%20de%20les%C3%B5es';
 
             try {
-                await fetch(WEBHOOK, {
+                const webhookUrl = new URL(WEBHOOK);
+                webhookUrl.searchParams.set('nome', payload.nome);
+                webhookUrl.searchParams.set('email', payload.email);
+                webhookUrl.searchParams.set('telefone', payload.telefone);
+                webhookUrl.searchParams.set('utm_source', payload.utm_source);
+                webhookUrl.searchParams.set('utm_term', payload.utm_term);
+                webhookUrl.searchParams.set('utm_campaign', payload.utm_campaign);
+                webhookUrl.searchParams.set('utm_medium', payload.utm_medium);
+                webhookUrl.searchParams.set('utm_content', payload.utm_content);
+                webhookUrl.searchParams.set('url', payload.url);
+
+                await fetch(webhookUrl.toString(), {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    mode: 'no-cors',
+                    keepalive: true
                 });
             } catch (err) {
                 console.error('Erro ao enviar webhook, prosseguindo com o redirecionamento.', err);
@@ -1121,6 +1145,65 @@
         }
 
         document.getElementById('form_bio')?.addEventListener('submit', handleFormSubmit);
+
+        (function () {
+            var marquee = document.getElementById('professors-marquee');
+            var track = document.getElementById('professors-track');
+            var group = track && track.querySelector('[data-professors-group]');
+            if (!marquee || !track || !group) return;
+            var AUTO_SPEED = 96, MOBILE_INTERVAL = 3000, MOBILE_BP = 768;
+            var currentX = 0, groupWidth = 0, lastTs = 0;
+            var isDragging = false, isHovered = false;
+            var dragStartX = 0, dragStartTrackX = 0;
+            var rafId = null, mobileTimer = null;
+            var mobileIdx = 0, mobileItems = [];
+            var isMobile = window.innerWidth < MOBILE_BP;
+
+            function wrap() { while (currentX <= -groupWidth) currentX += groupWidth; while (currentX > 0) currentX -= groupWidth; }
+            function render() { wrap(); track.style.transform = 'translate3d(' + currentX + 'px,0,0)'; }
+            function measure() { groupWidth = group.offsetWidth; render(); }
+            function startDrag(cx) { isDragging = true; dragStartX = cx; dragStartTrackX = currentX; marquee.classList.add('dragging'); }
+            function moveDrag(cx) { if (!isDragging) return; currentX = dragStartTrackX + (cx - dragStartX); render(); }
+            function endDrag() { if (!isDragging) return; isDragging = false; marquee.classList.remove('dragging'); }
+            function tick(ts) {
+                if (!isMobile && !isDragging && !isHovered && groupWidth > 0) {
+                    if (lastTs > 0) { currentX -= AUTO_SPEED * (ts - lastTs) / 1000; render(); }
+                }
+                lastTs = ts; rafId = requestAnimationFrame(tick);
+            }
+            function scrollToMobileItem(idx) {
+                var el = mobileItems[idx]; if (!el) return;
+                var cr = marquee.getBoundingClientRect(), er = el.getBoundingClientRect();
+                var targetLeft = Math.round(er.left - cr.left + marquee.scrollLeft);
+                if (targetLeft <= marquee.scrollLeft) { marquee.scrollLeft = targetLeft; } else { marquee.scrollTo({ left: targetLeft, behavior: 'smooth' }); }
+            }
+            function startMobileAuto() {
+                clearInterval(mobileTimer);
+                mobileTimer = setInterval(function () {
+                    if (!isHovered) { mobileIdx = (mobileIdx + 2) % mobileItems.length; scrollToMobileItem(mobileIdx); }
+                }, MOBILE_INTERVAL);
+            }
+            function setupDesktop() { isMobile = false; clearInterval(mobileTimer); lastTs = 0; measure(); }
+            function setupMobile() { isMobile = true; track.style.transform = 'none'; mobileItems = Array.from(group.children); mobileIdx = 0; marquee.scrollLeft = 0; startMobileAuto(); }
+            marquee.addEventListener('mouseenter', function () { isHovered = true; });
+            marquee.addEventListener('mouseleave', function () { isHovered = false; endDrag(); });
+            marquee.addEventListener('mousedown', function (e) { if (!isMobile) startDrag(e.clientX); });
+            window.addEventListener('mousemove', function (e) { if (!isMobile) moveDrag(e.clientX); });
+            window.addEventListener('mouseup', function () { if (!isMobile) endDrag(); });
+            marquee.addEventListener('touchstart', function (e) { if (e.touches.length === 1 && !isMobile) startDrag(e.touches[0].clientX); }, { passive: true });
+            marquee.addEventListener('touchmove', function (e) { if (e.touches.length === 1 && !isMobile) moveDrag(e.touches[0].clientX); }, { passive: true });
+            marquee.addEventListener('touchend', function () { if (!isMobile) endDrag(); });
+            marquee.addEventListener('wheel', function (e) { if (!isMobile) { currentX -= e.deltaX || e.deltaY; render(); } }, { passive: true });
+            marquee.addEventListener('dragstart', function (e) { e.preventDefault(); });
+            window.addEventListener('resize', function () {
+                var nowMobile = window.innerWidth < MOBILE_BP;
+                if (nowMobile !== isMobile) { if (nowMobile) setupMobile(); else setupDesktop(); }
+                else if (!isMobile) measure();
+            });
+            if (isMobile) setupMobile(); else setupDesktop();
+            rafId = requestAnimationFrame(tick);
+            window.addEventListener('beforeunload', function () { cancelAnimationFrame(rafId); clearInterval(mobileTimer); });
+        })();
     </script>
 </body>
 </html>
