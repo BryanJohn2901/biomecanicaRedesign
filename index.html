@@ -23,7 +23,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
+        if (typeof tailwind !== 'undefined') tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
@@ -94,34 +94,7 @@
         }
     </style>
 
-    <style id="estilo-faixa-copa">
-        #faixa-copa { font-family: 'Inter', sans-serif; }
-        #faixa-copa-fx { display: none; }
-        #faixa-copa-content { display: flex; align-items: center; justify-content: center; padding: 16px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 99999; gap: 12px; flex-direction: column; background-color: #15803d; border-bottom: 1px solid rgba(74, 222, 128, 0.4); box-shadow: 0 10px 30px rgba(21, 128, 61, 0.35); }
-        #faixa-copa-text { color: #ffffff; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 0; line-height: 1.4; }
-        #faixa-copa-highlight { color: #fde047; font-weight: 900; }
-        #faixa-copa-pulse { color: #bbf7d0; font-weight: 800; animation: pulseCopa 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        #faixa-copa-btn { display: none; background-color: #ffffff; color: #15803d; font-weight: 900; font-size: 11px; padding: 12px 30px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border: none; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease; white-space: nowrap; flex-shrink: 0; margin: 0; }
-        #faixa-copa-mobile-cta { display: flex; justify-content: center; align-items: center; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999; padding: 14px 20px 16px; background-color: #15803d; border-top: 1px solid rgba(74, 222, 128, 0.35); box-shadow: 0 -10px 30px rgba(21, 128, 61, 0.35); }
-        #faixa-copa-btn-mobile { background-color: #ffffff; color: #15803d; font-weight: 900; font-size: 11px; padding: 12px 30px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border: none; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease; white-space: nowrap; margin: 0; }
-        #faixa-copa-btn:hover { transform: scale(1.05); }
-        #faixa-copa-btn-mobile:hover { transform: scale(1.05); }
-        .faixa-copa-separator { display: none; opacity: 0.5; margin: 0 4px; }
-        @keyframes pulseCopa { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
-        @keyframes shimmerCopa { 100% { transform: translateX(100%); } }
-        
-        /* Regra para manter em uma única linha no Desktop */
-        @media (min-width: 768px) {
-            #faixa-copa { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999; background-color: #15803d; border-top: 1px solid rgba(74, 222, 128, 0.4); box-shadow: 0 -10px 40px rgba(21, 128, 61, 0.45); overflow: hidden; }
-            #faixa-copa-fx { display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transform: translateX(-100%); animation: shimmerCopa 3s infinite; }
-            #faixa-copa-content { position: relative; top: auto; left: auto; right: auto; z-index: 1; border-bottom: none; box-shadow: none; flex-direction: row; gap: 24px; }
-            #faixa-copa-text { flex-direction: row; font-size: 14px; white-space: nowrap; }
-            #faixa-copa-btn { display: inline-flex; }
-            #faixa-copa-mobile-cta { display: none; }
-            .faixa-copa-separator { display: inline; }
-        }
-    </style>
-</head>
+    </head>
 <body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW3SWDMG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
@@ -170,8 +143,8 @@
         </div>
         <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none max-w-[100vw]"></div>
 
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 mt-[160px] sm:mt-[200px] lg:mt-0">
-            <div class="space-y-6 flex flex-col text-center lg:text-left items-center lg:items-start" data-aos="fade-right">
+        <div class="container mx-auto px-6 grid lg:grid-cols-1 gap-8 lg:gap-12 items-center relative z-10 mt-[160px] sm:mt-[200px] lg:mt-0">
+            <div class="space-y-6 flex flex-col text-center lg:text-left items-center lg:items-start max-w-3xl" data-aos="fade-right">
                 <div class="flex justify-center lg:justify-start mb-4">
                     <img src="img/logo.svg" alt="BioMech Academy" class="h-8 md:h-10 w-auto" width="120" height="40" fetchpriority="high" onerror="this.src='https://via.placeholder.com/120x40/000000/FFFFFF?text=LOGO'">
                 </div>
@@ -201,19 +174,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
-
-            <div class="relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none mt-8 lg:mt-0" data-aos="fade-left">
-                <div class="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl lg:rotate-2 hover:rotate-0 transition duration-500 bg-black hero-video-container" style="aspect-ratio: 16/9;">
-                    <div id="video-cover-hero" class="absolute inset-0 z-20 cursor-pointer group" onclick="playVideoHero()">
-                        <img src="img/capaVideoHero.png" alt="Capa do vídeo" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-300" width="640" height="360" loading="eager" decoding="async" onerror="this.src='https://via.placeholder.com/640x360/111827/FFFFFF?text=Video'">
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-brand-primary/90 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition duration-300 shadow-[0_0_30px_rgba(30,100,240,0.6)] border border-white/20">
-                            <i class="fas fa-play text-white text-2xl md:text-3xl"></i>
-                        </div>
-                    </div>
-                    <iframe id="video-frame-hero" src="" title="Montagem aulas Biomecânica" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="absolute inset-0 w-full h-full border-0 z-10 hidden"></iframe>
-                </div>
-                <div class="absolute -inset-2 lg:-inset-4 border border-brand-primary/20 rounded-2xl z-0 hidden lg:block" style="max-width: calc(100% + 2rem);"></div>
             </div>
         </div>
     </section>
@@ -509,151 +469,150 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 sm:px-0">
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">01</span>
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">01</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Interpretação de Exames Laboratoriais</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Oferecendo mais credibilidade à sua atuação.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica da coluna: avaliação, reabilitação e treinamento do core</h4>
                     </div>
                 </div>
+
                 <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">02</span>
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">02</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Metodologia de Vendas On-line</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Montagem de esteira de produtos e caminhos para vender no Instagram.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Avaliação biomecânica postural e funcional: como interpretar e prescrever com segurança</h4>
                     </div>
                 </div>
+
                 <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">03</span>
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">03</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Análise Biomecânica Vetorial</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Aplicada a exercícios livres e nas máquinas da musculação.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="150">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">04</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica de Membros Superiores</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Aplicada a hipertrofia e força de membros superiores.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">05</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Quadril, Joelho e Tornozelo</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Doenças e lesões e como reabilitar com a musculação.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="250">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">06</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica da Coluna</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Avaliação, reabilitação e treinamento do core.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">07</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica da Marcha e Corrida</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Como avaliar e prescrever com segurança.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">08</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Avaliação Biomecânica Postural</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Como interpretar e prescrever com segurança.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">09</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
                         <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Mobilidade Articular</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Técnicas para ganho de amplitude e qualidade de movimento.</p>
                     </div>
                 </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="150">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">10</span>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">04</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica Prática MMII</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Exercícios de membros inferiores: hipertrofia e força muscular.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica prática em exercícios de membros inferiores: hipertrofia e força muscular</h4>
                     </div>
                 </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">11</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Periodização e Métodos de Treinos</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Métodos de treinos na musculação.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="250">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">12</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Ombro, Cotovelo e Punho</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Doenças e lesões e como reabilitar com a musculação.</p>
-                    </div>
-                </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">13</span>
-                    <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Emagrecimento na Musculação</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Como utilizar métodos e técnicas para garantir o resultado do cliente.</p>
-                    </div>
-                </div>
+
                 <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">14</span>
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">05</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica Funcional</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Exercícios com peso do corpo e treinamento funcional.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Periodização e métodos de treinos na musculação</h4>
                     </div>
                 </div>
+
                 <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">15</span>
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">06</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Musculação Especial</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Gestantes, hipertensos, diabéticos e idosos.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Doenças e lesões de ombro, cotovelo e punho e como reabilitar com a musculação</h4>
                     </div>
                 </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="150">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">16</span>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">07</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Reabilitação MMII</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Prevenção e reabilitação de lesões de membros inferiores.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Emagrecimento na musculação: como utilizar métodos e técnicas diferenciadas para garantir o resultado do seu cliente</h4>
                     </div>
                 </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">17</span>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">08</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Posturas e Ergonomia</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Na musculação, no trabalho e nas atividades diárias.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica aplicada aos exercícios com peso do corpo e treinamento funcional</h4>
                     </div>
                 </div>
-                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="250">
-                    <span class="absolute -right-4 -top-6 text-7xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">18</span>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">09</span>
                     <div class="relative z-10">
-                        <div class="w-10 h-1 bg-brand-primary mb-4 shadow-[0_0_10px_rgba(30,100,240,0.8)]"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Nutrição</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Da reabilitação a estética corporal.</p>
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Musculação e treinamento para grupos especiais: gestantes, hipertensos, diabéticos e idosos</h4>
                     </div>
                 </div>
-            </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">10</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Prevenção e reabilitação de lesões de membros inferiores</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">11</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Nutrição: da reabilitação à estética corporal</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">12</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Posturas na musculação, no trabalho (ergonomia) e nas atividades diárias: como garantir saúde e estética corporal</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">13</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Interpretação de exames laboratoriais: oferecendo mais credibilidade à sua atuação</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">14</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Metodologia de vendas on-line: montagem de esteira de produtos e caminhos para vender no Instagram</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">15</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica aplicada a hipertrofia e força de membros superiores</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">16</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Análise biomecânica vetorial aplicada a exercícios livres e nas máquinas da musculação</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">17</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Doenças e lesões de quadril, joelho e tornozelo e como reabilitar com a musculação</h4>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-surface border border-white/5 p-6 md:p-8 rounded-2xl overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">18</span>
+                    <div class="relative z-10">
+                        <div class="w-10 h-1 bg-brand-primary mb-4"></div>
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica da marcha e corrida: como avaliar e prescrever com segurança</h4>
+                    </div>
+                </div>
+</div>
         </div>
     </section>
 
@@ -732,18 +691,6 @@
             <h2 class="text-2xl sm:text-3xl md:text-5xl font-black text-white uppercase mb-6 px-4" data-aos="fade-up">Mais de 5.000 profissionais já tomaram essa decisão</h2>
             <p class="text-gray-400 text-lg max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">A maior referência em pós-graduação para Personal Trainers do Brasil — com nota máxima no MEC e resultado comprovado em mercado.</p>
             
-            <div class="max-w-4xl mx-auto mb-16" data-aos="fade-in" data-aos-delay="200">
-                <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-white/10 bg-black aspect-video">
-                    <div id="video-cover-depoimentos" class="absolute inset-0 z-20 cursor-pointer group" onclick="playVideoDepoimentos()">
-                        <img src="img/depoinemtos/depimentos.jpg" alt="Capa do Vídeo de Depoimentos" class="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition duration-500" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/800x450/111827/FFFFFF?text=Video+Depoimentos'">
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-brand-primary/90 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition duration-300 shadow-[0_0_30px_rgba(30,100,240,0.6)] border border-white/20">
-                            <i class="fas fa-play text-white text-2xl md:text-3xl"></i>
-                        </div>
-                    </div>
-                    <iframe id="video-frame-depoimentos" class="absolute inset-0 w-full h-full z-10 hidden" src="" title="Depoimentos de Alunos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                </div>
-            </div>
-            
             <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <div class="bg-brand-surface border border-white/5 rounded-2xl p-8 text-left" data-aos="fade-up" data-aos-delay="0">
                     <p class="text-sm text-gray-300 leading-relaxed mb-6 italic">"Depois da pós, eu parei de prescrever por intuição. Hoje cada decisão que tomo em treino tem uma justificativa biomecânica que eu consigo explicar."</p>
@@ -768,7 +715,7 @@
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="font-sans text-3xl md:text-5xl font-black text-white mb-6 uppercase">Perguntas Frequentes</h2>
-                <a href="https://wa.me/554195018521?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 font-bold py-3 px-6 rounded-full hover:bg-[#25D366]/20 transition shadow-lg text-sm text-center max-w-full">
+                <a href="https://wa.me/554195872098?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 font-bold py-3 px-6 rounded-full hover:bg-[#25D366]/20 transition shadow-lg text-sm text-center max-w-full">
                     <i class="fab fa-whatsapp text-lg shrink-0"></i> <span>Ficou com alguma dúvida?</span>
                 </a>
             </div>
@@ -844,7 +791,7 @@
                     <ul class="space-y-3 text-sm text-gray-500">
                         <li>Av. Rep. Argentina, 1237</li>
                         <li>Curitiba — PR</li>
-                        <li><a href="https://wa.me/554195018521?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="hover:text-brand-primary transition-colors">(41) 95018-521</a></li>
+                        <li><a href="https://wa.me/554195872098?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="hover:text-brand-primary transition-colors">(41) 9587-2098</a></li>
                     </ul>
                 </div>
             </div>
@@ -852,7 +799,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-center md:text-left">
                     <p class="text-gray-600 text-xs">&copy; 2026 Personal Trainer Academy. Todos os direitos reservados.</p>
                     <span class="hidden sm:inline text-gray-600" aria-hidden="true">·</span>
-                    <a href="https://wa.me/554195018521?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="text-gray-500 text-xs hover:text-white transition-colors">Suporte: (41) 95018-521</a>
+                    <a href="https://wa.me/554195872098?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="text-gray-500 text-xs hover:text-white transition-colors">Suporte: (41) 9587-2098</a>
                 </div>
                 <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500">
                     <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Site Seguro
@@ -861,44 +808,9 @@
         </div>
     </footer>
 
-    <div id="aviso-cookies" class="fixed bottom-28 right-4 md:bottom-28 md:right-6 z-[90] max-w-xs p-5 rounded-2xl bg-brand-surface/95 backdrop-blur-xl border border-brand-primary/20 shadow-[0_10px_40px_rgba(0,0,0,0.8)] transform transition-all duration-500 translate-y-20 opacity-0 pointer-events-none flex flex-col gap-4">
-        <div class="flex items-start gap-3">
-            <div class="w-10 h-10 shrink-0 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/30">
-                <i class="fas fa-cookie-bite text-lg"></i>
-            </div>
-            <div>
-                <h4 class="text-white font-bold text-sm mb-1">Sua privacidade</h4>
-                <p class="text-gray-400 text-[11px] leading-relaxed">
-                    Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa Política de Privacidade.
-                </p>
-            </div>
-        </div>
-        <div class="flex gap-2 mt-1">
-            <button id="btn-cookies-recusar" class="flex-1 px-3 py-2 rounded-lg border border-white/10 text-gray-400 text-xs font-bold hover:bg-white/5 hover:text-white transition-colors">
-                Recusar
-            </button>
-            <button id="btn-cookies-aceitar" class="flex-1 px-3 py-2 rounded-lg bg-brand-primary text-white text-xs font-bold hover:shadow-[0_0_15px_rgba(30,100,240,0.5)] transition-all">
-                Aceitar
-            </button>
-        </div>
-    </div>
+    
 
-    <div id="faixa-copa">
-        <div id="faixa-copa-fx"></div>
-        <div id="faixa-copa-content">
-            <p id="faixa-copa-text">
-                <span><strong id="faixa-copa-highlight">Matricule-se agora</strong> na pós-graduação e receba a <strong id="faixa-copa-highlight">camiseta exclusiva</strong> do time de especialistas <span id="faixa-copa-pulse">em casa</span></span>
-            </p>
-            <button type="button" id="faixa-copa-btn" onclick="abrirPopupAzul(); return false;">
-                Garantir Minha Camisa
-            </button>
-        </div>
-        <div id="faixa-copa-mobile-cta">
-            <button type="button" id="faixa-copa-btn-mobile" onclick="abrirPopupAzul(); return false;">
-                Garantir Minha Camisa
-            </button>
-        </div>
-    </div>
+    
 
     <div id="popup-azul" class="fixed inset-0 z-[105] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" aria-hidden="true">
         <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-[0_0_50px_rgba(30,100,240,0.2)] max-w-md w-full p-8 modal-content transform scale-95 transition-transform duration-300">
@@ -911,18 +823,18 @@
             </div>
             <form id="form_bio" class="space-y-4 mt-6 popup-form">
                 <div>
-                    <label for="lead-nome" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
-                    <input type="text" id="lead-nome" name="nome" required placeholder="Seu nome completo" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 outline-none transition">
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+                    <input type="text" id="name" name="name" required placeholder="Seu nome completo" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 outline-none transition">
                 </div>
                 <div>
-                    <label for="lead-email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                    <input type="email" id="lead-email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 outline-none transition">
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 outline-none transition">
                 </div>
                 <div>
-                    <label for="lead-phone" class="block text-sm font-medium text-gray-300 mb-1">Telefone</label>
+                    <label for="telefone" class="block text-sm font-medium text-gray-300 mb-1">Telefone</label>
                     <div class="flex rounded-lg overflow-hidden border border-white/10 focus-within:border-brand-primary focus-within:ring-1 bg-brand-bg">
                         <span class="inline-flex items-center px-4 py-3 bg-brand-primary text-black font-bold shrink-0">+55</span>
-                        <input type="tel" id="lead-phone" name="phone" required placeholder="(11) 99999-9999" maxlength="15" autocomplete="tel" class="flex-1 px-4 py-3 bg-transparent text-white placeholder-gray-500 outline-none min-w-0 mask-telefone">
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999" maxlength="15" autocomplete="tel" class="flex-1 px-4 py-3 bg-transparent text-white placeholder-gray-500 outline-none min-w-0 mask-telefone">
                     </div>
                     <p class="error-msg text-red-400 text-xs mt-1 hidden">Informe o DDD e o número completo.</p>
                 </div>
@@ -933,35 +845,17 @@
                 <input type="hidden" id="utm_content" name="utm_content" value="">
                 <input type="hidden" id="url" name="url" value="">
                 <button type="submit" class="w-full bg-brand-primary text-white font-sans font-bold py-4 mt-4 rounded-xl uppercase tracking-widest hover:shadow-[0_0_20px_rgba(30,100,240,0.6)] transition btn-submit">
-                    Avançar para Pagamento
+                    Falar com um especialista
                 </button>
             </form>
         </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         // AOS
-        AOS.init({ once: true, offset: 50, duration: 800 });
-
-        // Videos
-        function playVideoHero() {
-            const cover = document.getElementById('video-cover-hero');
-            const frame = document.getElementById('video-frame-hero');
-            if(cover && frame) {
-                cover.style.display = 'none';
-                frame.classList.remove('hidden');
-                frame.src = 'https://www.youtube.com/embed/q-OprwtI4Hs?autoplay=1&rel=0';
-            }
-        }
-        function playVideoDepoimentos() {
-            const cover = document.getElementById('video-cover-depoimentos');
-            const frame = document.getElementById('video-frame-depoimentos');
-            if(cover && frame) {
-                cover.style.display = 'none';
-                frame.classList.remove('hidden');
-                frame.src = 'https://www.youtube.com/embed/BqzLik6T0Qc?autoplay=1&rel=0';
-            }
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ once: true, offset: 50, duration: 800 });
         }
 
         // UTMs Globais
@@ -977,24 +871,7 @@
             return merged;
         }
         getUTMs(); // Inicializa no load
-
-        // LGPD Flutuante
-        document.addEventListener('DOMContentLoaded', () => {
-            const aviso = document.getElementById('aviso-cookies');
-            if (aviso && !localStorage.getItem('lgpd-aceito')) {
-                setTimeout(() => {
-                    aviso.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
-                }, 1500);
-            }
-            const hideAviso = (choice) => {
-                localStorage.setItem('lgpd-aceito', choice);
-                aviso.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-            };
-            document.getElementById('btn-cookies-aceitar')?.addEventListener('click', () => hideAviso('true'));
-            document.getElementById('btn-cookies-recusar')?.addEventListener('click', () => hideAviso('false'));
-        });
-
-        // Controle de Modais Seguro
+// Controle de Modais Seguro
         function abrirPopupAzul() {
             const m = document.getElementById('popup-azul');
             const utm = utmsParaWebhook();
@@ -1085,12 +962,11 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processando...';
 
-            const nome = form.nome.value.trim();
-            const email = form.email.value.trim();
+            const nome = document.getElementById('name')?.value?.trim() || '';
+            const email = document.getElementById('email')?.value?.trim() || '';
             let telefone = num;
             telefone = '+55' + telefone;
             const urlAtual = window.location.href;
-            const ut = utmsParaWebhook();
             const produto = 'BM9';
             const urlInput = document.getElementById('url');
             if (urlInput) urlInput.value = urlAtual;
@@ -1108,7 +984,11 @@
             };
 
             const WEBHOOK = 'https://hook.us1.make.com/bhigavwc6bfhskmnicov25r6jv9fnt1p?produto=' + produto;
-            const REDIRECT = 'https://wa.me/5541995395588?text=Quero%20saber%20mais%20sobre%20a%20p%C3%B3s%20gradua%C3%A7%C3%A3o%20em%20Biomec%C3%A2nica%20e%20reabilita%C3%A7%C3%A3o%20de%20les%C3%B5es';
+            const REDIRECT_WA_NUMBER = '5541995395588';
+            const nomeLimpo = nome || 'aluno';
+            const redirectUrl = 'https://wa.me/' + REDIRECT_WA_NUMBER + '?text=' + encodeURIComponent(
+                'Olá! Meu nome é ' + nomeLimpo + ' e quero mais informações sobre a pós-graduação em Biomecânica'
+            );
 
             try {
                 const webhookUrl = new URL(WEBHOOK);
@@ -1130,17 +1010,7 @@
             } catch (err) {
                 console.error('Erro ao enviar webhook, prosseguindo com o redirecionamento.', err);
             } finally {
-                const sep = REDIRECT.indexOf('?') !== -1 ? '&' : '?';
-                window.location.href = REDIRECT + sep +
-                    'nome=' + encodeURIComponent(nome) +
-                    '&email=' + encodeURIComponent(email) +
-                    '&telefone=' + encodeURIComponent(telefone) +
-                    '&utm_source=' + encodeURIComponent(ut.utm_source) +
-                    '&utm_term=' + encodeURIComponent(ut.utm_term) +
-                    '&utm_campaign=' + encodeURIComponent(ut.utm_campaign) +
-                    '&utm_medium=' + encodeURIComponent(ut.utm_medium) +
-                    '&utm_content=' + encodeURIComponent(ut.utm_content) +
-                    '&url=' + encodeURIComponent(urlAtual);
+                window.location.href = redirectUrl;
             }
         }
 

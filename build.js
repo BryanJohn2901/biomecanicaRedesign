@@ -134,10 +134,10 @@ async function main() {
   html = html.replace(/srcset=(["'])img\//g, 'srcset=$1assets/img/');
 
   // 5.3) inserir SEO tecnico no <head>
-  const canonicalUrl = 'https://pos.personaltraineracademy.com.br/';
+  const canonicalUrl = 'https://pos.personaltraineracademy.com.br/biomecanica/';
   const description =
     'Garanta sua vaga na Pós-graduação em Biomecânica com o Método ADR: avaliação, decisão e resultado prático. Turma 2026 com vagas limitadas.';
-  const ogImageUrl = 'https://pos.personaltraineracademy.com.br/assets/img/heroBg.webp';
+  const ogImageUrl = 'https://pos.personaltraineracademy.com.br/biomecanica/assets/img/heroBg.webp';
 
   const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
   const title = titleMatch ? titleMatch[1] : 'Pós-graduação em Biomecânica — Especialista pro';
@@ -259,6 +259,21 @@ async function main() {
     html.slice(0, scriptStart) +
     '<script src="js/main.js" defer></script>' +
     html.slice(scriptEnd + '</script>'.length);
+
+  // Remover Tailwind CDN (CSS já está em css/style.css) e evitar scripts bloqueantes
+  html = html.replace(/<script[^>]*src=["']https:\/\/cdn\.tailwindcss\.com["'][^>]*>\s*<\/script>/gi, '');
+  html = html.replace(/<script(?![^>]*\ssrc=)[^>]*>\s*if\s*\(\s*typeof\s+tailwind[\s\S]*?<\/script>/gi, '');
+  html = html.replace(
+    /<script([^>]*src=["']https:\/\/unpkg\.com\/aos@[^"']+["'][^>]*)><\/script>/gi,
+    (full, attrs) => {
+      if (/\bdefer\b/i.test(attrs)) return full;
+      return `<script${attrs} defer></script>`;
+    }
+  );
+  // Garantir link do CSS compilado (fonte usa só o CDN do Tailwind)
+  if (!/href=["']css\/style\.css["']/i.test(html)) {
+    html = html.replace(/<\/head>/i, '<link rel="stylesheet" href="css/style.css"></head>');
+  }
 
   // 5.5) preservar GTM: placeholder para nao minificar/alterar o conteudo do script
   const gtmNeedle = '<script>(function(w,d,s,l,i){';
