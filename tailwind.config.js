@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          bg: '#030912',
+          bg: '#090d18',
           surface: '#1a1a1a',
           primary: '#1e64f0',
           accent: '#60a5fa',
@@ -16,8 +16,14 @@ module.exports = {
       },
       container: {
         center: true,
-        padding: '1rem',
-        screens: { sm: '640px', md: '768px', lg: '1024px', xl: '1280px', '2xl': '1300px' },
+        padding: '1.5rem',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1300px',
+          '2xl': '1300px',
+        },
       },
       animation: {
         marquee: 'marquee-scroll 40s linear infinite',

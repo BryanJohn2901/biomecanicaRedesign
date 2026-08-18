@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="overflow-x-hidden scroll-smooth">
 <head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PW3SWDMG');</script>
+    <script async src="https://hub-pta.vercel.app/api/tracking/pixel.js?via=pulse-proxy"></script>
+    <script>window.pulseq=window.pulseq||[];pulseq.push(["init","wesley-maciel-da41187","7fcef49473bd"]);</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pós-graduação em Biomecânica — Especialista PRO</title>
@@ -26,6 +23,17 @@
         if (typeof tailwind !== 'undefined') tailwind.config = {
             theme: {
                 extend: {
+                    container: {
+                        center: true,
+                        padding: '1.5rem',
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1300px',
+                            '2xl': '1300px',
+                        },
+                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
@@ -96,10 +104,8 @@
 
     </head>
 <body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW3SWDMG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
     <nav class="fixed top-6 md:top-8 left-0 right-0 z-50 px-4 md:px-0 hidden md:block transition-all">
-        <div class="container mx-auto max-w-6xl">
+        <div class="container mx-auto max-w-[1300px]">
             <div class="relative flex items-center justify-between px-6 py-3 rounded-full glass-strong shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-brand-primary/40 hover:shadow-[0_12px_40px_0_rgba(30,100,240,0.15)]">
                 <a href="#" class="block hover:opacity-80 transition-opacity duration-300">
                     <img src="img/logoPTA.svg" alt="Biomecanica" class="h-10 md:h-12 w-auto" width="120" height="48" fetchpriority="high" onerror="this.src='https://via.placeholder.com/120x40/000000/FFFFFF?text=LOGO'">
@@ -134,44 +140,48 @@
         </div>
     </nav>
 
-    <section class="relative min-h-screen pt-32 md:pt-40 pb-12 md:pb-20 flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <picture>
-                <source media="(max-width: 768px)" srcset="img/ANDRE-1.png">
-                <img src="img/andre%20(1).png" alt="Professor André na capa da pós-graduação" class="w-full h-full object-cover object-top md:object-center animate-[pulse_10s_infinite_alternate] opacity-40" width="1920" height="1080" fetchpriority="high">
+    <section class="relative overflow-hidden bg-brand-bg md:min-h-screen md:pt-40 md:pb-20 md:flex md:items-center">
+        <div class="relative w-full md:absolute md:inset-0 md:z-0">
+            <picture class="block w-full">
+                <source media="(max-width: 767px)" srcset="img/BIO-MOBILE.webp" type="image/webp">
+                <img src="img/BIO-WEB.webp" alt="Professor André na capa da pós-graduação" class="block w-full h-auto object-cover object-top md:absolute md:inset-0 md:h-full md:object-right md:object-center" width="1920" height="1080" fetchpriority="high">
             </picture>
+            <!-- Mobile: fade inferior; Desktop: fade da esquerda p/ proteger o texto -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-36 sm:h-44 bg-gradient-to-t from-brand-bg from-[20%] via-brand-bg/80 to-transparent md:inset-0 md:h-auto md:bg-gradient-to-r md:from-brand-bg md:from-[28%] md:via-brand-bg/70 md:via-[48%] md:to-transparent"></div>
         </div>
-        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none max-w-[100vw]"></div>
+        <div class="hidden md:block absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none max-w-[100vw]"></div>
 
-        <div class="container mx-auto px-6 grid lg:grid-cols-1 gap-8 lg:gap-12 items-center relative z-10 mt-[160px] sm:mt-[200px] lg:mt-0">
-            <div class="space-y-6 flex flex-col text-center lg:text-left items-center lg:items-start max-w-3xl" data-aos="fade-right">
-                <div class="flex justify-center lg:justify-start mb-4">
-                    <img src="img/logo.svg" alt="BioMech Academy" class="h-8 md:h-10 w-auto" width="120" height="40" fetchpriority="high" onerror="this.src='https://via.placeholder.com/120x40/000000/FFFFFF?text=LOGO'">
-                </div>
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
-                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Turma 2026 — Vagas Limitadas
-                </div>
+        <div class="relative z-10 bg-brand-bg pt-6 pb-12 md:mt-0 md:w-full md:bg-transparent md:pt-0 md:pb-0">
+            <div class="container mx-auto max-w-[1300px] px-6 grid lg:grid-cols-1 gap-8 lg:gap-12 items-center">
+                <div class="space-y-6 flex flex-col text-center lg:text-left items-center lg:items-start max-w-xl xl:max-w-2xl max-md:mx-auto" data-aos="fade-right">
+                    <div class="flex justify-center lg:justify-start mb-4">
+                        <img src="img/logo.svg" alt="BioMech Academy" class="h-8 md:h-10 w-auto" width="120" height="40" fetchpriority="high" onerror="this.src='https://via.placeholder.com/120x40/000000/FFFFFF?text=LOGO'">
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Turma 2026 — Vagas Limitadas
+                    </div>
 
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-[1.1] text-white drop-shadow-lg">
-                    A Pós-graduação que Transforma a <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-blue-300 drop-shadow-none">Forma como Você Pensa o Treino</span>
-                </h1>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-[1.1] text-white drop-shadow-lg">
+                        A Pós-graduação que Transforma a <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-blue-300 drop-shadow-none">Forma como Você Pensa o Treino</span>
+                    </h1>
 
-                <p class="text-base sm:text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md font-medium">
-                    O título de pós-graduação que você precisa para aplicar a biomecânica de maneira prática, ter maior credibilidade com seus clientes e aumentar o seu faturamento.
-                </p>
+                    <p class="text-base sm:text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md font-medium">
+                        O título de pós-graduação que você precisa para aplicar a biomecânica de maneira prática, ter maior credibilidade com seus clientes e aumentar o seu faturamento.
+                    </p>
 
-                <div class="flex flex-col items-center lg:items-start gap-6 pt-4 w-full sm:w-auto">
-                    <a href="#" onclick="abrirPopupAzul(); return false;" class="bg-white text-black font-black uppercase py-4 px-8 rounded-xl hover:bg-gray-200 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200 w-full sm:w-auto text-center whitespace-nowrap">
-                        Garantir Minha Vaga Agora
-                    </a>
-                    
-                    <div class="w-full sm:w-auto bg-brand-primary/10 border border-brand-primary/30 rounded-xl p-4 backdrop-blur-sm">
-                        <p class="text-xs font-medium text-gray-300 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2">
-                            <span class="flex items-center gap-1"><i class="fas fa-check-circle text-brand-primary"></i> +10.000 Alunos Formados</span>
-                            <span class="flex items-center gap-1"><i class="fas fa-star text-brand-primary"></i> N° 1 em aulas práticas</span>
-                            <span class="flex items-center gap-1"><i class="fas fa-certificate text-brand-primary"></i> Certificado Reconhecido</span>
-                        </p>
+                    <div class="flex flex-col items-center lg:items-start gap-6 pt-4 w-full sm:w-auto">
+                        <a href="#" onclick="abrirPopupAzul(); return false;" class="bg-white text-black font-black uppercase py-4 px-8 rounded-xl hover:bg-gray-200 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200 w-full sm:w-auto text-center whitespace-nowrap">
+                            Garantir Minha Vaga Agora
+                        </a>
+                        
+                        <div class="w-full sm:w-auto bg-brand-primary/10 border border-brand-primary/30 rounded-xl p-4 backdrop-blur-sm">
+                            <p class="text-xs font-medium text-gray-300 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2">
+                                <span class="flex items-center gap-1"><i class="fas fa-check-circle text-brand-primary"></i> +10.000 Alunos Formados</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-star text-brand-primary"></i> N° 1 em aulas práticas</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate text-brand-primary"></i> Certificado Reconhecido</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -212,7 +222,7 @@
                 </h2>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-[1300px] mx-auto">
                 <div class="bg-brand-surface border border-white/5 rounded-2xl p-8 hover:border-brand-primary/30 transition-colors" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-12 h-1 bg-brand-primary mb-6"></div>
                     <div class="space-y-4 text-gray-300 text-base leading-relaxed">
@@ -247,7 +257,7 @@
                 <p class="text-sm sm:text-base text-gray-400">A maioria dos métodos de formação te ensina o que fazer. O Método ADR te ensina <strong>como pensar antes de fazer</strong>. Cada etapa é construída sobre a anterior. Não existe resultado sem raciocínio, e não existe raciocínio sem avaliação. É um processo estruturado, replicável e que se aplica a qualquer aluno, em qualquer contexto.</p>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 max-w-[1300px] mx-auto">
                 <div class="bg-brand-bg border border-white/5 p-6 rounded-2xl hover:border-brand-primary/50 transition duration-300 relative group" data-aos="fade-up" data-aos-delay="0">
                     <div class="text-brand-primary font-black text-4xl mb-4 opacity-50 group-hover:opacity-100 transition">01</div>
                     <h4 class="text-white font-bold uppercase mb-2">Avaliação</h4>
@@ -290,7 +300,7 @@
                     Uma formação que se encaixa na sua rotina.<br>Sem abrir mão da profundidade.
                 </h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-6 max-w-[1300px] mx-auto">
                 <div class="bg-brand-surface border border-white/5 p-8 rounded-2xl hover:border-brand-primary/30 transition-colors" data-aos="fade-up" data-aos-delay="0">
                     <div class="w-12 h-12 rounded-xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-xl mb-6">📅</div>
                     <h3 class="font-sans text-lg font-bold text-white mb-3">Horário Flexível</h3>
@@ -316,7 +326,7 @@
     </section>
 
     <section class="py-24 bg-brand-surface relative overflow-hidden border-b border-white/5">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-[1300px]">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right">
                     <div class="text-xs font-bold uppercase tracking-widest text-brand-primary mb-4">Exclusivo para alunos da pós</div>
@@ -369,7 +379,7 @@
     </section>
 
     <section class="py-24 bg-brand-bg relative border-b border-white/5">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-[1300px]">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="font-sans text-3xl md:text-4xl font-bold text-white mb-4 uppercase">
                     Uma pós-graduação feita para profissionais<br>que não se contentam com o básico
@@ -415,51 +425,51 @@
 
             <div id="professors-track" class="professors-track flex w-max">
                 <div class="flex gap-4 md:gap-8 px-2 md:px-4" data-professors-group>
-                    <img src="img/professores/1.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/2.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/3.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/4.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/5.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/6.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/7.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/8.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/9.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/10.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/11.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/12.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/13.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/14.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/15.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/16.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/17.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/18.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/1.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/2.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/3.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/4.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/5.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/6.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/7.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/8.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/9.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/10.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/11.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/12.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/13.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/14.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/15.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/16.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/17.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/18.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
                 </div>
                 <div class="flex gap-4 md:gap-8 px-2 md:px-4" aria-hidden="true">
-                    <img src="img/professores/1.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/2.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/3.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/4.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/5.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/6.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/7.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/8.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/9.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/10.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/11.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/12.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/13.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/14.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/15.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/16.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/17.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
-                    <img src="img/professores/18.svg" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="250" height="350" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/1.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/2.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/3.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/4.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/5.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/6.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/7.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/8.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/9.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/10.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/11.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/12.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/13.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/14.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/15.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/16.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/17.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
+                    <img src="img/capas/18.webp" alt="Professor" class="h-[480px] w-auto object-contain rounded-xl transition-transform hover:scale-105" width="270" height="480" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/250x350/111827/FFFFFF?text=Prof'">
                 </div>
             </div>
         </div>
     </section>
 
     <section id="modulos" class="py-24 relative bg-brand-bg">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-[1300px]">
             <div class="max-w-3xl mx-auto text-center mb-20" data-aos="fade-up">
                 <h2 class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">Conteúdo Programático</h2>
                 <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase">
@@ -473,7 +483,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">01</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica da coluna: avaliação, reabilitação e treinamento do core</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Biomecânica da coluna:<span class="font-medium text-gray-400 normal-case"> avaliação, reabilitação e treinamento do core</span></h4>
                     </div>
                 </div>
 
@@ -481,7 +491,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">02</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Avaliação biomecânica postural e funcional: como interpretar e prescrever com segurança</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Avaliação biomecânica postural e funcional:<span class="font-medium text-gray-400 normal-case"> como interpretar e prescrever com segurança</span></h4>
                     </div>
                 </div>
 
@@ -489,7 +499,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">03</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Mobilidade Articular</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Mobilidade Articular</h4>
                     </div>
                 </div>
 
@@ -497,7 +507,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">04</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica prática em exercícios de membros inferiores: hipertrofia e força muscular</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Biomecânica prática em exercícios de membros inferiores:<span class="font-medium text-gray-400 normal-case"> hipertrofia e força muscular</span></h4>
                     </div>
                 </div>
 
@@ -505,7 +515,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">05</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Periodização e métodos de treinos na musculação</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Periodização e métodos de treinos na musculação</h4>
                     </div>
                 </div>
 
@@ -513,7 +523,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">06</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Doenças e lesões de ombro, cotovelo e punho e como reabilitar com a musculação</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Prevenção e reabilitação de lesões —<span class="font-medium text-gray-400 normal-case"> ombro, cotovelo e punho</span></h4>
                     </div>
                 </div>
 
@@ -521,7 +531,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">07</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Emagrecimento na musculação: como utilizar métodos e técnicas diferenciadas para garantir o resultado do seu cliente</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Emagrecimento na musculação:<span class="font-medium text-gray-400 normal-case"> como utilizar métodos e técnicas diferenciadas para garantir o resultado do seu cliente</span></h4>
                     </div>
                 </div>
 
@@ -529,7 +539,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">08</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica aplicada aos exercícios com peso do corpo e treinamento funcional</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Biomecânica aplicada aos exercícios com peso do corpo e treinamento funcional</h4>
                     </div>
                 </div>
 
@@ -537,7 +547,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">09</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Musculação e treinamento para grupos especiais: gestantes, hipertensos, diabéticos e idosos</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Musculação e treinamento para grupos especiais:<span class="font-medium text-gray-400 normal-case"> gestantes, hipertensos, diabéticos e idosos</span></h4>
                     </div>
                 </div>
 
@@ -545,7 +555,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">10</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Prevenção e reabilitação de lesões de membros inferiores</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Prevenção e reabilitação de lesões —<span class="font-medium text-gray-400 normal-case"> quadril, joelho e tornozelo</span></h4>
                     </div>
                 </div>
 
@@ -553,7 +563,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">11</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Nutrição: da reabilitação à estética corporal</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Nutrição:<span class="font-medium text-gray-400 normal-case"> da reabilitação à estética corporal</span></h4>
                     </div>
                 </div>
 
@@ -561,7 +571,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">12</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Posturas na musculação, no trabalho (ergonomia) e nas atividades diárias: como garantir saúde e estética corporal</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Posturas na musculação, no trabalho (ergonomia) e nas atividades diárias:<span class="font-medium text-gray-400 normal-case"> como garantir saúde e estética corporal</span></h4>
                     </div>
                 </div>
 
@@ -569,7 +579,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">13</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Interpretação de exames laboratoriais: oferecendo mais credibilidade à sua atuação</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Metodologia de vendas on-line:<span class="font-medium text-gray-400 normal-case"> montagem de esteira de produtos e caminhos para vender no Instagram</span></h4>
                     </div>
                 </div>
 
@@ -577,7 +587,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">14</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Metodologia de vendas on-line: montagem de esteira de produtos e caminhos para vender no Instagram</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Prescrição do treinamento de força:<span class="font-medium text-gray-400 normal-case"> amplitude de movimento, seleção de exercícios e manipulação de variáveis aplicadas à biomecânica</span></h4>
                     </div>
                 </div>
 
@@ -585,7 +595,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">15</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica aplicada a hipertrofia e força de membros superiores</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Interpretação de exames laboratoriais:<span class="font-medium text-gray-400 normal-case"> oferecendo mais credibilidade à sua atuação</span></h4>
                     </div>
                 </div>
 
@@ -593,7 +603,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">16</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Análise biomecânica vetorial aplicada a exercícios livres e nas máquinas da musculação</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Biomecânica aplicada a hipertrofia e força de membros superiores</h4>
                     </div>
                 </div>
 
@@ -601,7 +611,7 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">17</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Doenças e lesões de quadril, joelho e tornozelo e como reabilitar com a musculação</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Biomecânica da marcha e corrida:<span class="font-medium text-gray-400 normal-case"> como avaliar e prescrever com segurança</span></h4>
                     </div>
                 </div>
 
@@ -609,10 +619,10 @@
                     <span class="absolute -right-2 -top-4 text-8xl md:text-9xl font-black text-white/5 group-hover:text-brand-primary/10 transition select-none">18</span>
                     <div class="relative z-10">
                         <div class="w-10 h-1 bg-brand-primary mb-4"></div>
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 uppercase leading-tight">Biomecânica da marcha e corrida: como avaliar e prescrever com segurança</h4>
+                        <h4 class="text-sm md:text-base font-semibold text-white mb-0 uppercase leading-snug">Análise biomecânica vetorial aplicada a exercícios livres e nas máquinas da musculação</h4>
                     </div>
                 </div>
-</div>
+            </div>
         </div>
     </section>
 
@@ -626,7 +636,7 @@
                 <p class="text-lg text-gray-400 max-w-2xl mx-auto">Além do conteúdo programático completo, você garante ferramentas e experiências exclusivas para acelerar seus resultados.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-6 max-w-[1300px] mx-auto">
                 <div class="bg-brand-bg border border-white/5 p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6 hover:border-brand-primary/40 transition duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="0">
                     <div class="w-16 h-16 shrink-0 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center group-hover:scale-110 transition duration-300">
                         <i class="fab fa-whatsapp text-2xl text-brand-accent"></i>
@@ -691,7 +701,7 @@
             <h2 class="text-2xl sm:text-3xl md:text-5xl font-black text-white uppercase mb-6 px-4" data-aos="fade-up">Mais de 5.000 profissionais já tomaram essa decisão</h2>
             <p class="text-gray-400 text-lg max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">A maior referência em pós-graduação para Personal Trainers do Brasil — com nota máxima no MEC e resultado comprovado em mercado.</p>
             
-            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-6 max-w-[1300px] mx-auto">
                 <div class="bg-brand-surface border border-white/5 rounded-2xl p-8 text-left" data-aos="fade-up" data-aos-delay="0">
                     <p class="text-sm text-gray-300 leading-relaxed mb-6 italic">"Depois da pós, eu parei de prescrever por intuição. Hoje cada decisão que tomo em treino tem uma justificativa biomecânica que eu consigo explicar."</p>
                     <div class="font-sans text-sm font-bold text-white">Carla M.</div>
@@ -715,9 +725,6 @@
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="font-sans text-3xl md:text-5xl font-black text-white mb-6 uppercase">Perguntas Frequentes</h2>
-                <a href="https://wa.me/554195872098?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20p%C3%B3s%20em%20Biomec%C3%A2nica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 font-bold py-3 px-6 rounded-full hover:bg-[#25D366]/20 transition shadow-lg text-sm text-center max-w-full">
-                    <i class="fab fa-whatsapp text-lg shrink-0"></i> <span>Ficou com alguma dúvida?</span>
-                </a>
             </div>
             
             <div class="space-y-4">
@@ -762,7 +769,7 @@
     </section>
 
     <footer class="relative bg-brand-darkgray border-t border-white/5 pt-16 pb-32">
-        <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div class="container mx-auto px-6 relative z-10 max-w-[1300px]">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
                 <div class="lg:col-span-5 space-y-4">
                     <img src="img/logo.svg" alt="BioMech Academy" class="h-10 w-auto mb-2" width="120" height="40" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/120x40/000000/FFFFFF?text=LOGO'">
@@ -853,10 +860,14 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        // AOS
-        if (typeof AOS !== 'undefined') {
-            AOS.init({ once: true, offset: 50, duration: 800 });
-        }
+        // AOS (aos.js is loaded with `defer`, so it may not have executed yet
+        // when this inline script runs; wait for DOMContentLoaded, which fires
+        // only after all deferred scripts have run, so AOS is guaranteed to be defined)
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ once: true, offset: 50, duration: 800 });
+            }
+        });
 
         // UTMs Globais
         function getUTMs() {

@@ -57,8 +57,11 @@ async function main() {
   ensureDir(DIST_JS_DIR);
   ensureDir(DIST_ASSETS_DIR);
 
-  // 2) copiar assets locais
-  fs.cpSync(SRC_IMG_DIR, path.join(DIST_ASSETS_DIR, 'img'), { recursive: true });
+  // 2) copiar assets locais (ignora fontes brutas de capas)
+  fs.cpSync(SRC_IMG_DIR, path.join(DIST_ASSETS_DIR, 'img'), {
+    recursive: true,
+    filter: (src) => !src.includes(`${path.sep}CAPAS novas`),
+  });
 
   // 3) gerar CSS Tailwind (purge via tailwind.config.js)
   execSync('npm run build:css', {
@@ -221,14 +224,7 @@ async function main() {
       '<head><link rel="preconnect" href="https://unpkg.com" crossorigin>'
     );
   }
-  if (!html.includes('href="https://www.googletagmanager.com"')) {
-    html = html.replace(
-      /<head>/i,
-      '<head><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>'
-    );
-  }
-
-  // 5.4) separar JS inline para dist/js/main.js (preservar GTM)
+  // 5.4) separar JS inline para dist/js/main.js
   // encontra o script principal (fluxo de envio do formulario)
   const webhookPos =
     html.indexOf('await fetch(WEBHOOK') !== -1
@@ -275,15 +271,16 @@ async function main() {
     html = html.replace(/<\/head>/i, '<link rel="stylesheet" href="css/style.css"></head>');
   }
 
-  // 5.5) preservar GTM: placeholder para nao minificar/alterar o conteudo do script
-  const gtmNeedle = '<script>(function(w,d,s,l,i){';
-  const gtmStart = html.indexOf(gtmNeedle);
-  if (gtmStart !== -1) {
-    const gtmEnd = html.indexOf('</script>', gtmStart);
-    if (gtmEnd !== -1) {
-      const gtmBlock = html.slice(gtmStart, gtmEnd + '</script>'.length);
-      html = html.slice(0, gtmStart) + '__GTM_BLOCK_0__' + html.slice(gtmEnd + '</script>'.length);
-      // 5.6) minificar HTML
+  // 5.5) preservar pixel Pulse: nao minificar/alterar o init
+  const pulseNeedle = 'window.pulseq=window.pulseq||[]';
+  const pulseStart = html.indexOf('<script>' + pulseNeedle) !== -1
+    ? html.indexOf('<script>' + pulseNeedle)
+    : html.indexOf('<script>window.pulseq');
+  if (pulseStart !== -1) {
+    const pulseEnd = html.indexOf('</script>', pulseStart);
+    if (pulseEnd !== -1) {
+      const pulseBlock = html.slice(pulseStart, pulseEnd + '</script>'.length);
+      html = html.slice(0, pulseStart) + '__PULSE_BLOCK_0__' + html.slice(pulseEnd + '</script>'.length);
       const min = await minifyHtml(html, {
         collapseWhitespace: true,
         removeComments: false,
@@ -291,18 +288,15 @@ async function main() {
         useShortDoctype: true,
         minifyCSS: false,
         minifyJS: false,
-        // preserva conteudo em tags script (principalmente o GTM) sem "mexer"
-        ignoreCustomFragments: [/__GTM_BLOCK_0__/],
+        ignoreCustomFragments: [/__PULSE_BLOCK_0__/],
       });
       let finalHtml = (typeof min === 'string' ? min : min.code) || '';
-      finalHtml = finalHtml.replace('__GTM_BLOCK_0__', gtmBlock);
-
+      finalHtml = finalHtml.replace('__PULSE_BLOCK_0__', pulseBlock);
       writeText(path.join(DIST_DIR, 'index.html'), finalHtml);
       return;
     }
   }
 
-  // fallback sem GTM (nao deveria acontecer)
   const min = await minifyHtml(html, {
     collapseWhitespace: true,
     removeComments: false,
